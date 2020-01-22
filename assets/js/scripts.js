@@ -1,15 +1,10 @@
-$(function() {
+var xhr = new XMLHttpRequest();
 
-    console.log("Test");
+xhr.open("GET", "https://api.scryfall.com/cards/random");
+xhr.send();
 
-    const mtg = require('mtgsdk')
-
-mtg.card.find(3)
-.then(result => {
-    console.log(result.card.name) // "Black Lotus"
-})
-
-});
-
-
-
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("data").innerHTML = this.responseText;
+    }
+};
