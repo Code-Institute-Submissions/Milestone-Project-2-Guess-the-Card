@@ -1,17 +1,42 @@
-# Your Project's Name
+# Flavour Points
 
-One or two paragraphs providing an overview of your project.
+This website will be designed as a game to test and challenge the knowledge of MtG fans based on MtG flavour and lore.
 
-Essentially, this part is your sales pitch.
+Providing a short, quiz like structure as its basis, the game will present the user with clues about the identity of a Magic: The Gathering
+card that they are trying to guess the name of. I will pull card data from the Scryfall API. The user will be challenged to guess the 
+name of five cards, one at a time. The first clue will be the flavour text of the card (Which is traditionally an in game quote or flavourful text based on the card itself)
+which is the free clue. Subsequent clues will then cost the user points against their final score in the game.
+
+When a game is finished a pop up will display the user's scorecard and the option to share the game and thier results on social media.
+The user can challenge friends to beat their score, or match their perfect score.
+
+The game will contain small advert sections, providing advert revenue on a simple and shareable game with aims of going viral.
  
 ## UX
+
+This game will suit a mobile first design, as the main user will be mtg players with a majority demographic of males aged from teens upwards. Magic: The Gathering
+has made significant inroads into E-Sports recently with their release of MtG: Arena, with the majority of the games coverage being broadcasted on twitch. Most players use mobile devices to read strategy articles
+or check card prices on trader websites while trading with other players, making them tech-savvy enough to navigate a intuitive mobile application. The main sources of player to player trading are social media groups and trading websites.
+
+The secondary user would be a partner who advertising on the games single page platform. Their advert banner would generate footfall to their commerse page, which would increase
+as the game is shared.
+
+#### Hook
+
+As the game will use JS/Jquery to pull 5 random cards, with flavour text, from a database of thousands, the game will have a variable difficulty every time it is played. This will make the experience new-ish each time.
+This also means that while one person could get a really high score from an easy round, their friends may have a hard time beating it. This should cause a repepitive play pattern through the challenge. The sharing of the game and score is very key to this.
+
+Example: 
+
+Player A shares the link with a max score of 35 points. They challenge their MtG facebook friends to play the game and beat their score, each of them does the same. This will expose the advert banner to an ever expanding number of players. 
+We can track footfall impact on the advertisers website to see if the process is working.
+
+### Design mockups
+
+Design some mock ups to go here!
+
+
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 ## Features
 
