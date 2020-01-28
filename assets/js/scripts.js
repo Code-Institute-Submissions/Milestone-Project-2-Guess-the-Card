@@ -1,4 +1,4 @@
-const baseURL = "https://api.scryfall.com/cards/random"
+const baseURL = "https://api.scryfall.com/cards/random?q=ft:/.+/"
 var card1 = []
 var card2 = []
 var card3 = []
@@ -20,14 +20,14 @@ function getData(cb) {
 }
 
 function printData(data) {
-    if (data.flavor_text == undefined) {
-        getData(printData);
-    } else {
         console.dir(data);
-        document.getElementById("flavourText").innerHTML = data.flavor_text;
-        card1.push(data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
+        $('#flavourText').html(data.flavor_text);
+        card1 = [];
+        card1.push(data.name, data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
+        console.log(card1);
     }
-}
+
+    
 
 
 
