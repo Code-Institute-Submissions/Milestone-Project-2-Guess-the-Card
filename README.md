@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/JPMurdie/Milestone-Project-2-Guess-the-Card) 
+
 # Flavour Points
 
 This website will be designed as a game to test and challenge the knowledge of MtG fans based on MtG flavour and lore.
