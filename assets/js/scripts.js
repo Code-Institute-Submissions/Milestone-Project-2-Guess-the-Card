@@ -24,14 +24,11 @@ function printData(data) {
         getData(printData);
     } else {
         console.dir(data);
-        document.getElementById("data").innerHTML = data.flavor_text;
+        document.getElementById("flavourText").innerHTML = data.flavor_text;
         card1.push(data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
     }
 }
 
-getData(printData);
-
-console.log(card1);
 
 
 

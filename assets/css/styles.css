@@ -1,0 +1,20 @@
+#data {
+    height: 200px;
+    background-color: blue;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+}
