@@ -1,3 +1,13 @@
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: black;
+}
+
 #data {
     height: 200px;
     background-color: blue;
