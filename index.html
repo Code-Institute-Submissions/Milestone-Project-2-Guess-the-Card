@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div class="container m-0 p-0 d-block d-lg-none">
+	<div class="container-fluid m-0 p-0 d-block d-lg-none">
 		<div class="row headRow">
 			<div class="col-12">
 				<header class="container text-center p-0" id="headerContainer">
@@ -20,6 +20,7 @@
 				</header>
 			</div>
 		</div>
+
 		<div class="row adRow">
 			<div class="col-12">
 				<div class="container text-center" id="adContainter">
@@ -28,22 +29,39 @@
 			</div>
 		</div>
 
-		<div id="gameDisplay" class="container p-1" style="background-color:lightblue;">
-			<div class="row">
+		<div id="gameDisplay" class="container-fluid p-1" style="background-color:lightblue;">
+			<div class="row my-2">
 				<div class="col-12">
 					<div class="container text-center">
 						<button type="button" onclick="getData(printData)" class="btn btn-outline-primary">New Game</button>
 					</div>
 				</div>
 			</div>
+			<div class="row m-1">
+				<div class="col-6 p-0">
+					<div class="mtgCardCont container blue">
+						<img id="mtgBack" src="#" alt="mtgCardBack">
+					</div>
+					</div>
+					<div class="col-6 container-fluid">
+						<div id="flavourRow" class="row">
+							<div class="col-12 container green">
+								<p>flavourText</p>
+							</div>
+							<div class="flavourTextCol col-12">
+								<p id="flavourTextData"> </p>
+							</div>
+						</div>
+						<div id="livesRow" class="row">
+							<div class=" col-12 container pink">
+								<p>Lives</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-
-
-
-            
-		</div>
-
-		<!--<div class="container pink p-3" style="height:60vh;">
+			<!--<div class="container pink p-3" style="height:60vh;">
 			<div class="row m-1 p-1" style="height:70%;">
 				<div class="col-6 p-0 blue">
 					<p>test</p>
@@ -76,24 +94,24 @@
 
 		</div>-->
 
-		<div id="jsScripts">
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-				crossorigin="anonymous">
-			</script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-				integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-				crossorigin="anonymous">
-			</script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-				integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-				crossorigin="anonymous">
-			</script>
-			<script type="text/javascript>" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-			</script>
-			<script type="text/javascript" src="assets/js/scripts.js"></script>
+			<div id="jsScripts">
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+					crossorigin="anonymous">
+				</script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+					integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+					crossorigin="anonymous">
+				</script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+					integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+					crossorigin="anonymous">
+				</script>
+				<script type="text/javascript>" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+				</script>
+				<script type="text/javascript" src="assets/js/scripts.js"></script>
+			</div>
 		</div>
-	</div>
 </body>
 
 </html>

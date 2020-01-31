@@ -8,6 +8,26 @@ body {
     background-color: black;
 }
 
+.mtgCardCont {
+    height: 200px;
+    width: 140px;
+}
+
+#flavourRow, #livesRow {
+    height: 50%;
+}
+
+.flavourTextCol {
+    overflow: scroll;
+}
+
+
+#flavourTextData {
+    font-size: 0.75em;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
 #data {
     height: 200px;
     background-color: blue;

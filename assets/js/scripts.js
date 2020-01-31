@@ -21,13 +21,11 @@ function getData(cb) {
 
 function printData(data) {
         console.dir(data);
-        $('#flavourText').html(data.flavor_text);
+        $('#flavourTextData').html(data.flavor_text);
         card1 = [];
         card1.push(data.name, data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
         console.log(card1);
     }
-
-    
 
 
 
