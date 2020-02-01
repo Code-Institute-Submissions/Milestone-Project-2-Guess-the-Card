@@ -13,19 +13,31 @@ body {
     width: 140px;
 }
 
-#flavourRow, #livesRow {
-    height: 50%;
+#flavourRow {
+    height: 20%;
 }
 
+#flavourTextRow {
+    height: 80%;
+
+}
 .flavourTextCol {
-    overflow: scroll;
+    position: relative;
+    height: 100%;
 }
-
 
 #flavourTextData {
+    Position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 80%;
+    margin: -40% 0 0 -40%;
     font-size: 0.75em;
     overflow-wrap: break-word;
-    overflow: hidden;
+    overflow: scroll;
+
+
 }
 
 #data {
@@ -47,4 +59,19 @@ body {
 
 .pink {
     background-color: pink;
+}
+
+.white {
+    background-color: White;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
