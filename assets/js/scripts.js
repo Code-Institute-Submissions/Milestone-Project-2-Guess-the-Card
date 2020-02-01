@@ -26,7 +26,3 @@ function printData(data) {
         card1.push(data.name, data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
         console.log(card1);
     }
-
-
-
-

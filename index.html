@@ -37,22 +37,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="row my-2">
-				<div class="offset-2 col-4">
-					<div class="container text-center">
-						<p>Score</p>
+				<div class="row my-2 scoreRow">
+					<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
+							<p class="scoreText">Score</p>
 					</div>
-            </div>
-                <div class="col-4">
-					<div class="container text-center">
-						<p>4</p>
+					<div class="col-4 scoreCol scoreColRight text-center">
+							<p class="scoreText">4</p>
 					</div>
 				</div>
-			</div>
 			<div class="row m-1">
 				<div class="col-6 p-0">
-					<div class="mtgCardCont container blue">
-						<img id="mtgBack" src="#" alt="mtgCardBack">
+					<div class="mtgCardCont container blue p-0">
+						<img id="mtgBack" class="mtgCardImg" src="assets/imgs/Magic_card_back.jpg" alt="mtgCardBack">
 					</div>
 					</div>
 					<div class="col-6 container-fluid">
@@ -68,12 +64,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="row m-1">
-					<div class="col-6">
-						<p>Lives:</p>
+				<div class="row my-2 scoreRow">
+					<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
+							<p class="scoreText">Lives</p>
 					</div>
-					<div class="col-6">
-						<p>5</p>
+					<div class="col-4 scoreCol scoreColRight text-center">
+							<p class="scoreText">5</p>
 					</div>
 				</div>
 				<div class="row m-1">
@@ -88,36 +84,36 @@
 						</div>
 					</div>
 				</div>
-			
 
-			<div class="container-fluid m-1 p-1" style="background-color:magenta;">
-				<div class="row">
-					<div class="col-12">
-						<div class="container">
-							<p>Test</p>
-							<button class="green m-1">Reveal Clue 1</button>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="container">
-							<p>Test</p>
-							<button class="green m-1">Reveal Clue 2</button>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="container">
-							<p>Test</p>
-							<button class="green m-1">Reveal Clue 3</button>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<!--<div class="container pink p-3" style="height:60vh;">
+				<div class="container-fluid m-1 p-1" style="background-color:magenta;">
+					<div class="row">
+						<div class="col-12">
+							<div class="container">
+								<p>Test</p>
+								<button class="green m-1">Reveal Clue 1</button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="container">
+								<p>Test</p>
+								<button class="green m-1">Reveal Clue 2</button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="container">
+								<p>Test</p>
+								<button class="green m-1">Reveal Clue 3</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--<div class="container pink p-3" style="height:60vh;">
 			<div class="row m-1 p-1" style="height:70%;">
 				<div class="col-6 p-0 blue">
 					<p>test</p>
@@ -150,24 +146,25 @@
 
 		</div>-->
 
-			<div id="jsScripts">
-				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-					crossorigin="anonymous">
-				</script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-					integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-					crossorigin="anonymous">
-				</script>
-				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-					integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-					crossorigin="anonymous">
-				</script>
-				<script type="text/javascript>" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-				</script>
-				<script type="text/javascript" src="assets/js/scripts.js"></script>
+				<div id="jsScripts">
+					<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+						integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+						crossorigin="anonymous">
+					</script>
+					<script type="text/javascript>"
+						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+					</script>
+					<script type="text/javascript" src="assets/js/scripts.js"></script>
+				</div>
 			</div>
-		</div>
 </body>
 
 </html>

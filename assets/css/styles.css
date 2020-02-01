@@ -8,9 +8,14 @@ body {
     background-color: black;
 }
 
+p {
+    margin: 0;
+}
+
 .mtgCardCont {
     height: 200px;
     width: 140px;
+    border-radius: 5px;
 }
 
 #flavourRow {
@@ -32,12 +37,10 @@ body {
     left: 50%;
     height: 80%;
     width: 80%;
-    margin: -40% 0 0 -40%;
+    transform: translate(-50%, -50%);
     font-size: 0.75em;
     overflow-wrap: break-word;
     overflow: scroll;
-
-
 }
 
 #data {
@@ -74,4 +77,48 @@ body {
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.scoreRow {
+    height: 30px;
+}
+
+.scoreCol {
+    position: relative;
+    height: 100%;
+}
+
+.scoreText {
+    Position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 80%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.scoreColLeft {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 0.1px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.scoreColRight {
+    border-top: 1px solid black;
+    border-left: 0.1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.mtgCardImg {
+    display: block;
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
