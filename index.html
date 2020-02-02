@@ -33,7 +33,7 @@
 			<div class="row my-2">
 				<div class="col-12">
 					<div class="container text-center">
-						<button type="button" onclick="getData(printData)" class="btn btn-outline-primary">New Game</button>
+						<button type="button" onclick="getData(printData)">New Game</button>
 					</div>
 				</div>
 			</div>
@@ -82,28 +82,28 @@
 				</div>
 
 
-				<div class="container-fluid m-1 p-1" style="background-color:magenta;">
-					<div class="row">
+				<div class="container-fluid p-1" style="background-color:magenta;">
+					<div class="row my-2 clueRow">
 						<div class="col-12">
-							<div class="container">
-								<p>Test</p>
-								<button class="green m-1">Reveal Clue 1</button>
+							<div class="container clueCont">
+								<p id="clue1" class="clueTextBox">Test</p>
+								<button id="cButton1" class="clueButton green">Reveal Card Colour</button>
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row my-2 clueRow">
 						<div class="col-12">
-							<div class="container">
-								<p>Test</p>
-								<button class="green m-1">Reveal Clue 2</button>
+							<div class="container clueCont">
+								<p id="clue2" class="clueTextBox">Test</p>
+								<button id="cButton2" class="clueButton green">Reveal Card Set</button>
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row my-2 clueRow">
 						<div class="col-12">
-							<div class="container">
-								<p>Test</p>
-								<button class="green m-1">Reveal Clue 3</button>
+							<div class="container clueCont">
+								<p id="clue3" class="clueTextBox">Test</p>
+								<button id="cButton3" class="clueButton green">Reveal Card Type</button>
 							</div>
 						</div>
 					</div>
