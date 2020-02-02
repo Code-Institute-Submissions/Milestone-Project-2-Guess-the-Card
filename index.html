@@ -37,28 +37,28 @@
 					</div>
 				</div>
 			</div>
-				<div class="row my-2 scoreRow">
-					<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
-							<p class="scoreText">Score</p>
-					</div>
-					<div class="col-4 scoreCol scoreColRight text-center">
-							<p class="scoreText">4</p>
-					</div>
+			<div class="row my-2 scoreRow">
+				<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
+					<p class="scoreText">Score</p>
 				</div>
+				<div class="col-4 scoreCol scoreColRight text-center">
+					<p class="scoreText">0</p>
+				</div>
+			</div>
 			<div class="row m-1">
 				<div class="col-6 p-0">
 					<div class="mtgCardCont container blue p-0">
 						<img id="mtgBack" class="mtgCardImg" src="assets/imgs/Magic_card_back.jpg" alt="mtgCardBack">
 					</div>
 					</div>
-					<div class="col-6 container-fluid">
-						<div id="flavourRow" class="row">
-							<div class="col-12 container green">
-								<p class="m-0">flavourText</p>
+					<div class="col-6 p-0 text-center">
+						<div id="flavourRow" class="row scoreRow mtgCardCont p-0 mx-auto">
+							<div id="flavourCol" class="col-12 scoreCol container green">
+								<p class="m-0 scoreText">flavourText</p>
 							</div>
 						</div>
-						<div id="flavourTextRow" class="row">
-							<div class="flavourTextCol col-12 white text-center">
+						<div id="flavourTextRow" class="row mtgCardCont p-0 mx-auto">
+							<div id="flavourTextCol" class="col-12 white text-center p-0">
 								<p id="flavourTextData" class="align-middle"> </p>
 							</div>
 						</div>
@@ -66,22 +66,18 @@
 				</div>
 				<div class="row my-2 scoreRow">
 					<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
-							<p class="scoreText">Lives</p>
+						<p class="scoreText">Lives</p>
 					</div>
 					<div class="col-4 scoreCol scoreColRight text-center">
-							<p class="scoreText">5</p>
+						<p class="scoreText">5</p>
 					</div>
 				</div>
-				<div class="row m-1">
-					<div class="col-6">
-						<div class="container">
-							<input type="text"></input>
-						</div>
+				<div class="row m-2 scoreRow">
+					<div class="col-6 p-0 scoreCol scoreColLeft text-center">
+						<input id="guessInput" class="p-0 m-0" type="text"></input>
 					</div>
-					<div class="col-6">
-						<div class="container">
-							<button>Guess</button>
-						</div>
+					<div class="col-6 p-0 scoreCol scoreColRight text-center">
+						<button id="guessSub">Submit Guess</button>
 					</div>
 				</div>
 
