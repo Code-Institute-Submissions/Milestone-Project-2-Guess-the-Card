@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <!--Container for mobile to tablet display only-->
-	<div id="mobilePlatform" class="container-fluid m-0 p-0 d-block d-lg-none">
-        <div id="landingContainer" class="container-fluid">
+	<!--Container for mobile to tablet display only-->
+	<div id="landingContainer" class="container-fluid">
 		<div class="row headRow">
 			<div class="col-12 p-0">
 				<header id="headerContainer" class="container-fluid text-center p-0">
@@ -22,7 +21,7 @@
 				</header>
 			</div>
 		</div>
-        <div class="row headRow">
+		<div class="row headRow">
 			<div class="col-12 p-0">
 				<header id="headerContainer" class="container-fluid text-center p-0">
 					<h6 class="headTitle">Theros: Beyond Death! Edition</h6>
@@ -33,142 +32,112 @@
 		<div class="row adRow">
 			<div class="col-12 p-0">
 				<div id="adContainter" class="container-fluid p-2">
-					<a href="https://starcitygames.com/" target="_blank"><h3 class="adTitle"></h3></a>
+					<a href="https://starcitygames.com/" target="_blank">
+						<h3 class="adTitle"></h3>
+					</a>
 				</div>
 			</div>
 		</div>
-        </div>
+	</div>
 
-		<div id="gameDisplay" class="container-fluid p-1">
-			<div class="row my-2">
-				<div class="col-12">
-					<div class="container text-center">
-						<button id="newGameButton" class="gameButton" type="button" onclick="getData(printData)">New Game</button>
-					</div>
-				</div>
-			</div>
-			<div class="row my-2 scoreRow">
-				<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
-					<p class="scoreText">Score</p>
-				</div>
-				<div class="col-4 scoreCol scoreColRight text-center gameButton">
-					<p id="scoreNum" class="scoreText">0</p>
-				</div>
-			</div>
-			<div class="row m-1">
-				<div class="col-6 p-0">
-					<div class="mtgCardCont container blue p-0">
-						<img id="mtgBack" class="mtgCardImg" src="assets/imgs/Magic_card_back.jpg" alt="mtgCardBack">
-					</div>
-					</div>
-					<div class="col-6 p-0 text-center">
-						<div id="flavourRow" class="row scoreRow mtgCardCont p-0 mx-auto">
-							<div id="flavourCol" class="col-12 scoreCol container gameButton">
-								<p class="m-0 scoreText">flavourText</p>
-							</div>
-						</div>
-						<div id="flavourTextRow" class="row mtgCardCont p-0 mx-auto">
-							<div id="flavourTextCol" class="col-12 gameButton white text-center p-0">
-								<p id="flavourTextData" class="align-middle"> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row my-2 scoreRow">
-					<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
-						<p class="scoreText">Lives</p>
-					</div>
-					<div class="col-4 scoreCol scoreColRight text-center gameButton">
-						<p id="livesNum" class="scoreText">5</p>
-					</div>
-				</div>
-				<div class="row m-2 scoreRow">
-					<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
-						<input id="guessInput" class="p-0 m-0" type="text" value=""/>
-					</div>
-					<div class="col-6 p-0 scoreCol scoreColRight text-center">
-						<button id="guessSub" class="gameButton" onclick="guessTheCard(name)">Submit Guess</button>
-					</div>
-				</div>
-
-
-				<div class="container-fluid p-1">
-					<div class="row my-2 clueRow">
+	<div class="container">
+		<div class="row">
+			<div class="d-none d-lg-inline-block col-lg-3"></div>
+			<div id="mobilePlatform" class="container-fluid m-0 p-0 d-block col-lg-6">
+				<div id="gameDisplay" class="container-fluid p-1">
+					<div class="row my-2">
 						<div class="col-12">
-							<div class="container clueCont">
-								<p id="clue1" class="clueTextBox">Test</p>
-								<button id="cButton1" class="clueButton">Reveal Card Colour</button>
+							<div class="container text-center">
+								<button id="newGameButton" class="gameButton" type="button" onclick="getData(printData)">New Game</button>
 							</div>
 						</div>
 					</div>
-					<div class="row my-2 clueRow">
-						<div class="col-12">
-							<div class="container clueCont">
-								<p id="clue2" class="clueTextBox">Test</p>
-								<button id="cButton2" class="clueButton">Reveal Card Set</button>
-							</div>
+					<div class="row my-2 scoreRow">
+						<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
+							<p class="scoreText">Score</p>
+						</div>
+						<div class="col-4 scoreCol scoreColRight text-center gameButton">
+							<p id="scoreNum" class="scoreText">0</p>
 						</div>
 					</div>
-					<div class="row my-2 clueRow">
-						<div class="col-12">
-							<div class="container clueCont">
-								<p id="clue3" class="clueTextBox">Test</p>
-								<button id="cButton3" class="clueButton">Reveal Card Type</button>
+					<div class="row m-1 p-2">
+							<div class="col-12 p-0 text-center">
+								<div id="flavourRow" class="row scoreRow mtgCardCont p-0 mx-auto">
+									<div id="flavourCol" class="col-12 scoreCol container gameButton">
+										<p class="m-0 scoreText">flavourText</p>
+									</div>
+								</div>
+								<div id="flavourTextRow" class="row mtgCardCont p-0 mx-auto">
+									<div id="flavourTextCol" class="col-12 gameButton white text-center p-0">
+										<p id="flavourTextData" class="align-middle"> </p>
+									</div>
+								</div>
 							</div>
 						</div>
+						<div class="row my-2 scoreRow">
+							<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
+								<p class="scoreText">Lives</p>
+							</div>
+							<div class="col-4 scoreCol scoreColRight text-center gameButton">
+								<p id="livesNum" class="scoreText">5</p>
+							</div>
+						</div>
+						<div class="row m-2 scoreRow">
+							<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
+								<input id="guessInput" class="p-0 m-0" type="text" value=""/>
+					        </div>
+								<div class="col-6 p-0 scoreCol scoreColRight text-center">
+									<button id="guessSub" class="gameButton" onclick="guessTheCard(name)">Submit Guess</button>
+								</div>
+							</div>
+
+
+							<div class="container-fluid p-1">
+								<div class="row my-2 clueRow">
+									<div class="col-12">
+										<div class="container clueCont">
+											<p id="clue1" class="clueTextBox">Test</p>
+											<button id="cButton1" class="clueButton">Reveal Card Colour</button>
+										</div>
+									</div>
+								</div>
+								<div class="row my-2 clueRow">
+									<div class="col-12">
+										<div class="container clueCont">
+											<p id="clue2" class="clueTextBox">Test</p>
+											<button id="cButton2" class="clueButton">Reveal Card Set</button>
+										</div>
+									</div>
+								</div>
+								<div class="row my-2 clueRow">
+									<div class="col-12">
+										<div class="container clueCont">
+											<p id="clue3" class="clueTextBox">Test</p>
+											<button id="cButton3" class="clueButton">Reveal Card Type</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="jsScripts">
+							<script src="https://code.jquery.com/jquery-3.4.1.js"
+								integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+							</script>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+								integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+								crossorigin="anonymous">
+							</script>
+							<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+								integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+								crossorigin="anonymous">
+							</script>
+							<script type="text/javascript>"
+								src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+							</script>
+							<script type="text/javascript" src="assets/js/scripts.js"></script>
+						</div>
 					</div>
-				</div>
-
-				<!--<div class="container pink p-3" style="height:60vh;">
-			<div class="row m-1 p-1" style="height:70%;">
-				<div class="col-6 p-0 blue">
-					<p>test</p>
-				</div>
-			</div>
-			<div class="row m-1 p-1">
-				<div class="col-12">
-					<p id="flavourText" class="green p-1" style="width:100%;"> </p>
-				</div>
-			</div>
-			<m-1></m-1>
-			<div class="row m-1 p-1" style="height:15%;">
-				<div class="col-12 p-0">
-					<button type="button" onclick="getData(printData)" class="btn btn-outline-primary btn-block">New Card</button>
-				</div>
-			</div>
-			<div class="row m-1 p-1" style="height:15%;">
-				<div class="col-6">
-					<input type="text"></input>
-				</div>
-				<div class="col-6">
-					<button class="btn btn-outline-primary btn-block">Submit</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="container pink p-3" style="height:40vh;">
-			<div class="row"></div>
-			<div class="row"></div>
-
-		</div>-->
-
-				<div id="jsScripts">
-                    <script
-                        src="https://code.jquery.com/jquery-3.4.1.js"
-                        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-                        crossorigin="anonymous"></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-						crossorigin="anonymous">
-					</script>
-					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-						crossorigin="anonymous">
-					</script>
-					<script type="text/javascript>"
-						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-					</script>
-					<script type="text/javascript" src="assets/js/scripts.js"></script>
+					<div class="desktopBuffer d-none d-lg-block col-lg-3"></div>
 				</div>
 			</div>
 </body>
