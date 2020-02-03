@@ -12,37 +12,47 @@
 </head>
 
 <body>
-	<div class="container-fluid m-0 p-0 d-block d-lg-none">
+    <!--Container for mobile to tablet display only-->
+	<div id="mobilePlatform" class="container-fluid m-0 p-0 d-block d-lg-none">
+        <div id="landingContainer" class="container-fluid">
 		<div class="row headRow">
-			<div class="col-12">
-				<header class="container text-center p-0" id="headerContainer">
-					<h3 class="headTitle" style="background-color:white;">Flavour Points</h3>
+			<div class="col-12 p-0">
+				<header id="headerContainer" class="container-fluid text-center p-0">
+					<h3 class="headTitle">Flavour Points:</h3>
+				</header>
+			</div>
+		</div>
+        <div class="row headRow">
+			<div class="col-12 p-0">
+				<header id="headerContainer" class="container-fluid text-center p-0">
+					<h6 class="headTitle">Theros: Beyond Death! Edition</h6>
 				</header>
 			</div>
 		</div>
 
 		<div class="row adRow">
-			<div class="col-12">
-				<div class="container text-center" id="adContainter">
-					<h3 class="adTitle" style="background-color:white;">Advert</h3>
+			<div class="col-12 p-0">
+				<div id="adContainter" class="container-fluid p-2">
+					<a href="https://starcitygames.com/" target="_blank"><h3 class="adTitle"></h3></a>
 				</div>
 			</div>
 		</div>
+        </div>
 
-		<div id="gameDisplay" class="container-fluid p-1" style="background-color:lightblue;">
+		<div id="gameDisplay" class="container-fluid p-1">
 			<div class="row my-2">
 				<div class="col-12">
 					<div class="container text-center">
-						<button type="button" onclick="getData(printData)">New Game</button>
+						<button id="newGameButton" class="gameButton" type="button" onclick="getData(printData)">New Game</button>
 					</div>
 				</div>
 			</div>
 			<div class="row my-2 scoreRow">
-				<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
+				<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
 					<p class="scoreText">Score</p>
 				</div>
-				<div class="col-4 scoreCol scoreColRight text-center">
-					<p class="scoreText">0</p>
+				<div class="col-4 scoreCol scoreColRight text-center gameButton">
+					<p id="scoreNum" class="scoreText">0</p>
 				</div>
 			</div>
 			<div class="row m-1">
@@ -53,41 +63,41 @@
 					</div>
 					<div class="col-6 p-0 text-center">
 						<div id="flavourRow" class="row scoreRow mtgCardCont p-0 mx-auto">
-							<div id="flavourCol" class="col-12 scoreCol container green">
+							<div id="flavourCol" class="col-12 scoreCol container gameButton">
 								<p class="m-0 scoreText">flavourText</p>
 							</div>
 						</div>
 						<div id="flavourTextRow" class="row mtgCardCont p-0 mx-auto">
-							<div id="flavourTextCol" class="col-12 white text-center p-0">
+							<div id="flavourTextCol" class="col-12 gameButton white text-center p-0">
 								<p id="flavourTextData" class="align-middle"> </p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row my-2 scoreRow">
-					<div class="offset-2 col-4 scoreCol scoreColLeft text-center">
+					<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
 						<p class="scoreText">Lives</p>
 					</div>
-					<div class="col-4 scoreCol scoreColRight text-center">
-						<p class="scoreText">5</p>
+					<div class="col-4 scoreCol scoreColRight text-center gameButton">
+						<p id="livesNum" class="scoreText">5</p>
 					</div>
 				</div>
 				<div class="row m-2 scoreRow">
-					<div class="col-6 p-0 scoreCol scoreColLeft text-center">
-						<input id="guessInput" class="p-0 m-0" type="text"></input>
+					<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
+						<input id="guessInput" class="p-0 m-0" type="text" value=""/>
 					</div>
 					<div class="col-6 p-0 scoreCol scoreColRight text-center">
-						<button id="guessSub">Submit Guess</button>
+						<button id="guessSub" class="gameButton" onclick="guessTheCard(name)">Submit Guess</button>
 					</div>
 				</div>
 
 
-				<div class="container-fluid p-1" style="background-color:magenta;">
+				<div class="container-fluid p-1">
 					<div class="row my-2 clueRow">
 						<div class="col-12">
 							<div class="container clueCont">
 								<p id="clue1" class="clueTextBox">Test</p>
-								<button id="cButton1" class="clueButton green">Reveal Card Colour</button>
+								<button id="cButton1" class="clueButton">Reveal Card Colour</button>
 							</div>
 						</div>
 					</div>
@@ -95,7 +105,7 @@
 						<div class="col-12">
 							<div class="container clueCont">
 								<p id="clue2" class="clueTextBox">Test</p>
-								<button id="cButton2" class="clueButton green">Reveal Card Set</button>
+								<button id="cButton2" class="clueButton">Reveal Card Set</button>
 							</div>
 						</div>
 					</div>
@@ -103,7 +113,7 @@
 						<div class="col-12">
 							<div class="container clueCont">
 								<p id="clue3" class="clueTextBox">Test</p>
-								<button id="cButton3" class="clueButton green">Reveal Card Type</button>
+								<button id="cButton3" class="clueButton">Reveal Card Type</button>
 							</div>
 						</div>
 					</div>
@@ -143,10 +153,10 @@
 		</div>-->
 
 				<div id="jsScripts">
-					<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-						integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-						crossorigin="anonymous">
-					</script>
+                    <script
+                        src="https://code.jquery.com/jquery-3.4.1.js"
+                        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                        crossorigin="anonymous"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 						crossorigin="anonymous">

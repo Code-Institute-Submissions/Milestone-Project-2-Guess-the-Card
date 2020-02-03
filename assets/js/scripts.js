@@ -1,9 +1,7 @@
-const baseURL = "https://api.scryfall.com/cards/random?q=ft:/.+/"
+const baseURL = "https://api.scryfall.com/cards/random?q=set:thb ft:/.+/"
 var card1 = []
-var card2 = []
-var card3 = []
-var card4 = []
-var card5 = []
+var newScore = 5;
+var decrement = 1;
 
 function getData(cb) {
 
@@ -26,3 +24,29 @@ function printData(data) {
         card1.push(data.name, data.flavor_text, data.set_name, data.type_line, data.image_uris.normal);
         console.log(card1);
     }
+
+function guessTheCard(name) {
+    
+    var name = $("#guessInput").val();
+    var score = $("#scoreNum").html();
+    var life = $("#livesNum").html();
+
+    if (name == card1[0]) {
+        $("#scoreNum").html(Number(score) + newScore);
+        $("#guessInput").val("");
+        getData(printData);
+    } else {
+        console.log("Opps!");
+        $("#livesNum").html(Number(life) - decrement);
+    };
+}
+
+$(".clueButton").click(function() {
+    if ($(this).attr("id") == "cButton1") {
+        $(this).fadeOut(1000);
+        $("#clue1").html(card1[2]);
+    } else {
+        console.log("No!");
+    };
+    
+});

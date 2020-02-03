@@ -6,6 +6,7 @@ html {
 
 body {
     background-color: black;
+    width:100%;
 }
 
 p {
@@ -16,6 +17,18 @@ p {
     height: 200px;
     width: 140px;
     border-radius: 5px;
+}
+
+#mobilePlatform {
+    width:100%;
+    margin: 0;
+}
+
+.gameButton {
+    background-color: black;
+    color: lightcyan;
+    border: 0.5px solid rgba(224,255, 255);
+    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
 }
 
 #flavourTextRow {
@@ -31,6 +44,11 @@ p {
     border-right: 1px solid black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+#newGameButton {
+    width: 100%;
+    border-radius: 5px;
 }
 
 #flavourTextData {
@@ -50,6 +68,18 @@ p {
     background-color: blue;
 }
 
+#headerContainer {
+    width: 100%;
+}
+
+.headTitle {
+    background-color: black;
+    color: lightcyan;
+    width: auto;
+    margin: auto;
+}
+
+
 .blue {
     background-color: blue;
 }
@@ -68,6 +98,7 @@ p {
 
 .white {
     background-color: White;
+    color: black;
 }
 
 ::-webkit-scrollbar {
@@ -79,6 +110,10 @@ p {
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.headRow. adRow {
+    margin: 0;
 }
 
 .scoreRow {
@@ -100,19 +135,11 @@ p {
 }
 
 .scoreColLeft {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 0.5px solid black;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .scoreColRight {
-    border-top: 1px solid black;
-    border-left: 0.5px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -135,7 +162,6 @@ p {
 }
 
 #guessInput {
-    border: none;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -144,7 +170,6 @@ p {
 }
 
 #guessSub {
-    border: none;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -165,10 +190,13 @@ p {
     height: 100%;
     width: 80%;
     z-index: 2;
-    border: 1px solid black;
     padding: 0;
     border-radius: 5px;
     margin-left: -40%;
+    background-color: black;
+    color: lightcyan;
+    border: 0.5px solid rgba(224,255, 255);
+    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
 }
 
 .clueTextBox {
@@ -183,8 +211,34 @@ p {
     border-radius: 5px;
     transform: translate(-50%, -50%);
     line-height: 40px;
+    color: lightcyan;
+    border: 0.5px solid rgba(224,255, 255);
+    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
 }
 
 .clueRow {
     height: 50px;
+}
+
+#landingContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.adTitle {
+    height: 70px;
+    width: 100%;
+    margin: 5px;
+    background-image: url(https://cdn11.bigcommerce.com/s-3b5vpig99v/product_images/theme_images/hero-marquee-thb-order-now.png?t=1580600494);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 768px) {
+    .adTitle {
+        height: 100px;
+        width: 60%;
+        margin: auto;
+    }
 }
