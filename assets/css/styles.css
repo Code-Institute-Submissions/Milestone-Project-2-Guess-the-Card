@@ -19,6 +19,41 @@ p {
     border-radius: 5px;
 }
 
+#newGameCanvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color:rgb(135, 206, 250, 0.8);
+    z-index: 3;
+    border-radius: 5px;
+    display: none;
+}
+
+#newGameModal {
+    background-color: black;
+    Position: absolute;
+    display: block;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.canvasButton {
+    background-color: black;
+    color: lightcyan;
+    border: 0.5px solid rgba(224,255, 255);
+    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
+    border-radius: 5px;
+}
+
+.canvasQuestion {
+    color: lightcyan;
+}
+
 #mobilePlatform {
     width:100%;
     margin: 0;
@@ -55,7 +90,7 @@ p {
     Position: absolute;
     top: 50%;
     left: 50%;
-    height: 80%;
+    height: auto;
     width: 80%;
     transform: translate(-50%, -50%);
     font-size: 0.75em;
@@ -101,18 +136,7 @@ p {
     color: black;
 }
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
-
-.headRow. adRow {
+.headRow {
     margin: 0;
 }
 
@@ -126,6 +150,15 @@ p {
 }
 
 .scoreText {
+    Position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 80%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.FlavourText {
     Position: absolute;
     left: 50%;
     top: 50%;
@@ -253,4 +286,43 @@ p {
         margin: auto;
         background-size: cover;
     }
-} 
+}
+
+/*Stackoverflow - Vinay (Altered the code so I could flash up and down with score/life changes)
+URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-in-jquery */
+
+.flashUp {
+  animation: flashUp 1s ease-out;
+  animation-iteration-count: 1;
+  border-radius: 5px;
+}
+
+.flashDown {
+  animation: flashDown 1s ease-out;
+  animation-iteration-count: 1;
+  border-radius: 5px;
+}
+
+@keyframes flashUp {
+    0% { background-color: transparent; }
+    50% { background-color: #39ff14; }
+    100% { background-color: transparent; }
+}
+
+@-webkit-keyframes flashUp {
+    0% { background-color: transparent; }
+    50% { background-color: #39ff14; }
+    100% { background-color: transparent; }
+}
+
+@keyframes flashDown {
+    0% { background-color: transparent; }
+    50% { background-color: #ff0101; }
+    100% { background-color: transparent; }
+}
+
+@-webkit-keyframes flashDown {
+    0% { background-color: transparent; }
+    50% { background-color: #ff0101; }
+    100% { background-color: transparent; }
+}
