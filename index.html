@@ -7,12 +7,11 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/output.css">
 	<title>Document</title>
 </head>
 
 <body>
-	<!--Container for mobile to tablet display only-->
 	<div id="landingContainer" class="container-fluid">
 		<div class="row headRow">
 			<div class="col-12 p-0">
@@ -28,18 +27,16 @@
 				</header>
 			</div>
 		</div>
-
 		<div class="row adRow">
 			<div class="col-12 p-0">
 				<div id="adContainter" class="container-fluid p-2">
-					<a href="https://starcitygames.com/" target="_blank">
+					<a href="https://starcitygames.com/shop/new-releases/" target="_blank">
 						<h3 class="adTitle"></h3>
 					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="container">
 		<div class="row">
 			<div class="d-none d-lg-inline-block col-lg-3"></div>
@@ -47,22 +44,39 @@
 				<div id="gameDisplay" class="container-fluid p-1">
 					<div id="newGameCanvas">
 						<div class="container p-0 m-0">
-							<div id="newGameModal" class="modal border">
-                                <div class="container">
-                                <div class="row m-1 p-1">
-                                <div class="col-12 text-center">
-								<p class="canvasQuestion">Start New Game?</p>
-                                </div>
-                                </div>
-                                <div class="row m-1 p-1">
-                                <div class="col-6 text-center">
-								<button id="newGameYes" class="startButton canvasButton">Yes</button>
-                                </div>
-                                <div class="col-6 text-center">
-								<button class="canvasButton">No</button>
-                                </div>
-                                </div>
-                                </div>
+							<div id="newGameModal" class="modal">
+								<div class="container">
+									<div class="row m-1 p-1">
+										<div class="col-12 text-center">
+											<p class="canvasQuestion">Start New Game?</p>
+										</div>
+									</div>
+									<div class="row m-3 p-1">
+										<div class="col-6 text-center">
+											<button id="newGameYes" class="startButton canvasButton">Yes</button>
+										</div>
+										<div class="col-6 text-center">
+											<button class="canvasButton">No</button>
+										</div>
+									</div>
+								</div>
+								<hr id="ruleBreak">
+								<div class="container">
+									<div class="row">
+										<div class="col-12 text-center canvasQuestion">
+											<h6>Rules!</h6>
+											<ul p-0>
+												<li>Guess the name of the Theros: Beyond Death Magic card from flavour
+													text only!</li>
+												<li>Guess incorrectly and lose a life! You've only got 5!</li>
+												<li>Have no idea? Reveal the clues to gain more information.</li>
+												<li>Be careful, as clues cost score points!</li>
+												<li>How high can you score?</li>
+												<li>Challenge your friends!</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -74,12 +88,12 @@
 						</div>
 					</div>
 					<div class="row my-2 scoreRow">
-						<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
-							<p class="scoreText">Score</p>
-						</div>
-						<div class="col-4 scoreCol scoreColRight text-center gameButton">
-							<p id="scoreNum" class="scoreText">0</p>
-						</div>
+							<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
+								<p class="scoreText">Score</p>
+							</div>
+							<div class="col-4 scoreCol scoreColRight text-center gameButton">
+								<p id="scoreNum" class="scoreText">3</p>
+							</div>
 					</div>
 					<div class="row m-1 p-2">
 						<div class="col-12 p-0 text-center">
@@ -108,17 +122,15 @@
 							<input id="guessInput" class="p-0 m-0" type="text" value=""/>
 					        </div>
 							<div class="col-6 p-0 scoreCol scoreColRight text-center">
-								<button id="guessSub" class="subButton gameButton startButton">Submit Guess</button>
+								<button id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
 							</div>
 						</div>
-
-
 						<div class="container-fluid p-1">
 							<div class="row my-2 clueRow">
 								<div class="col-12">
 									<div class="container clueCont">
-										<p id="clue1" class="clueTextBox">Test</p>
-										<button id="cButton1" class="clueButton">Reveal Card Colour</button>
+										<p id="clue1" class="clueTextBox"></p>
+										<button id="cButton1" class="clueButton stickyButton" disabled>Reveal Card Colour</button>
 									</div>
 								</div>
 							</div>
@@ -126,7 +138,7 @@
 								<div class="col-12">
 									<div class="container clueCont">
 										<p id="clue2" class="clueTextBox">Test</p>
-										<button id="cButton2" class="clueButton">Reveal Card Set</button>
+										<button id="cButton2" class="clueButton stickyButton" disabled>Reveal Converted Mana Cost</button>
 									</div>
 								</div>
 							</div>
@@ -134,7 +146,7 @@
 								<div class="col-12">
 									<div class="container clueCont">
 										<p id="clue3" class="clueTextBox">Test</p>
-										<button id="cButton3" class="clueButton">Reveal Card Type</button>
+										<button id="cButton3" class="clueButton stickyButton" disabled>Reveal Card Type</button>
 									</div>
 								</div>
 							</div>

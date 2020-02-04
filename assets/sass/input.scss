@@ -1,3 +1,11 @@
+/*sass assets/sass/input.scss assets/css/output.css*/
+/*----------------------------------------SASS Variables*/
+
+$mainBgColor: rgb(165, 242, 243);
+$mainTextColor: white;
+$mainGlowColor: rgb(0,206,209);
+$mainGlow: 0px 0px 15px $mainGlowColor;
+
 /*----------------------------------------Element Styles*/
 html {
     margin: 0;
@@ -6,6 +14,9 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    border: 0;
     background-color: black;
     width:100%;
 }
@@ -13,25 +24,32 @@ body {
 p {
     margin: 0;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 0.80em;
+    margin-bottom: 10px;
+}
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Global Class Styles*/
 
-$bgcolor: lightblue;
-
 /*----------------------------------------Global Media Queries & Animation Styles*/
-
-
-
-
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Landing Container Styles*/
 /*--------------------Landing Container ID Styles*/
 
+#ruleBreak {
+    border-top: 1px solid $mainBgColor;
+}
+
 /*--------------------Landing Container Class Styles*/
 
 /*--------------------Landing Container Media Queries & Animations Styles*/
-
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Game Display Styles*/
@@ -66,18 +84,18 @@ $bgcolor: lightblue;
     border-radius: 5px;
     top: 50%;
     left: 50%;
-    height: 100px;
+    height: 400px;
     width: 300px;
     transform: translate(-50%, -50%);
     z-index: 4;
-    border: 2px solid lightcyan;
+    border: 2px solid $mainBgColor;
 }
 
 .canvasButton {
     background-color: black;
-    color: lightcyan;
+    color: $mainTextColor;
     border: 0.5px solid rgba(224,255, 255);
-    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
+    box-shadow: 0px 0px 15px $mainGlowColor;
     border-radius: 5px;
 }
 
@@ -92,9 +110,9 @@ $bgcolor: lightblue;
 
 .gameButton {
     background-color: black;
-    color: lightcyan;
-    border: 0.5px solid rgba(224,255, 255);
-    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
+    color: $mainTextColor;
+    border: 0.5px solid $mainBgColor;
+    box-shadow: $mainGlow;
 }
 
 #flavourTextRow {
@@ -139,7 +157,7 @@ $bgcolor: lightblue;
 
 .headTitle {
     background-color: black;
-    color: lightcyan;
+    color: $mainTextColor;
     width: auto;
     margin: auto;
 }
@@ -162,7 +180,7 @@ $bgcolor: lightblue;
 }
 
 .white {
-    background-color: White;
+    background-color: white;
     color: black;
 }
 
@@ -257,9 +275,9 @@ $bgcolor: lightblue;
     border-radius: 5px;
     margin-left: -40%;
     background-color: black;
-    color: lightcyan;
-    border: 0.5px solid rgba(224,255, 255);
-    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
+    color: $mainTextColor;
+    border: 0.5px solid $mainBgColor;
+    box-shadow: 0px 0px 15px $mainGlowColor;
 }
 
 .clueTextBox {
@@ -273,9 +291,9 @@ $bgcolor: lightblue;
     border-radius: 5px;
     transform: translate(-50%, -50%);
     line-height: 40px;
-    color: lightcyan;
+    color: $mainTextColor;
     border: 0.5px solid rgba(224,255, 255);
-    box-shadow: 0px 0px 15px rgba(224, 255 , 255, .5);
+    box-shadow: 0px 0px 15px $mainGlowColor;
 }
 
 .clueRow {
