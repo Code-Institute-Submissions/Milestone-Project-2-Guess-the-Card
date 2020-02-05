@@ -1,5 +1,7 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/JPMurdie/Milestone-Project-2-Guess-the-Card) 
 
+https://jpmurdie.github.io/Milestone-Project-2-Guess-the-Card/
+
 /*5 Lives, keep going until you run out of lives, how many cards you guess = your score?*/
 
 # Flavour Points

@@ -1,4 +1,4 @@
-/*sass assets/sass/input.scss assets/css/output.css*/
+/*npm install -g sass  sass assets/sass/input.scss assets/css/output.css*/
 /*----------------------------------------SASS Variables*/
 /*----------------------------------------Element Styles*/
 html {
@@ -44,6 +44,10 @@ li {
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Game Display Styles*/
 /*--------------------Game Display ID Styles*/
+#gameDisplay {
+  position: relative;
+}
+
 /*--------------------Game Display Class Styles*/
 /*--------------------Game Display Media Queries & Animations Styles*/
 .mtgCardCont {
@@ -443,5 +447,47 @@ URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-
 .brown {
   background-color: brown;
 }
+
+#confirm {
+  display: none;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 1px solid lightcyan;
+  border-radius: 5px;
+  position: absolute;
+  width: 350px;
+  height: 125px;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 5;
+  box-shadow: 0px 0px 15px darkturquoise;
+}
+
+#confirm button {
+  display: inline-block;
+  border: 1px solid lightcyan;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+#confirm .message {
+  text-align: center;
+}
+
+.cannotAfford {
+  color: red;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=output.css.map */
 
 /*# sourceMappingURL=output.css.map */

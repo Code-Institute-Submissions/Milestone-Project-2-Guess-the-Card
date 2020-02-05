@@ -4,6 +4,8 @@ var card1 = []
 var newScore = 5;
 var decrement = 1;
 var callId = "";
+var scoreElement = document.getElementById('scoreNum');
+var lifeElement = document.getElementById('livesNum');
 /*----------------------------------------Standard Functions*/
 /*--------------------Data Functions*/
 function getData(cb) {
@@ -28,6 +30,17 @@ function printData(data) {
     card1.push(data.name, data.flavor_text, data.colors, data.type_line, data.cmc, data.image_uris.normal);
     console.log(card1);
 }
+
+function functionAlert(msg, myYes) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".yes").unbind().click(function() {
+               confirmBox.hide();
+            });
+            confirmBox.find(".yes").click(myYes);
+            confirmBox.show();
+         }
+
 /*----------------------------------------onClick Functions*/
 
 $("#newGameButton").click(function () {
@@ -50,7 +63,11 @@ $(".startButton").click(function guessTheCard(name) {
         var name = $("#guessInput").val();
         var score = $("#scoreNum").html();
         var life = $("#livesNum").html();
-
+        
+        if (name == "") {
+            functionAlert();
+            return;
+        } else {
         if (name == card1[0]) {
             $("#scoreNum").html(Number(score) + newScore);
             $("#scoreNum").addClass("flashUp");
@@ -77,6 +94,7 @@ $(".startButton").click(function guessTheCard(name) {
             getData(printData);
         };
     };
+    };
 });
 
 $(".clueButton").click(function () {
@@ -95,3 +113,32 @@ $(".clueButton").click(function () {
         console.log("No!");
     };
 });
+
+/*----------------------------------------Listeners*/
+
+window.addEventListener('load', function() {
+    var scoreElement = document.getElementById('scoreNum');
+    
+   var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var observer = new MutationObserver(myFunction);
+  observer.observe(scoreElement,{
+	  childList: true
+  });
+
+  function myFunction() {
+    if (scoreElement.innerHTML == 0) {
+        $(".clueButton").addClass("cannotAfford");
+        $(".clueButton").attr("disabled", true);
+        $(".clueButton").html("Score point to buy more clues!");
+    } else if (scoreElement.innerHTML > 0) {
+        $(".clueButton").removeClass("cannotAfford");
+        $(".clueButton").attr("disabled", false);
+        $("#cButton1").html("Reveal Card Colour");
+        $("#cButton2").html("Reveal Converted Mana Cost");
+        $("#cButton3").html("Reveal Card Type");
+    }
+  }
+
+});
+
+
