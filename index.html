@@ -12,7 +12,7 @@
 </head>
 
 <body>
-          
+
 	<div id="landingContainer" class="container-fluid">
 		<div class="row headRow">
 			<div class="col-12 p-0">
@@ -43,12 +43,12 @@
 			<div class="d-none d-lg-inline-block col-lg-3"></div>
 			<div id="mobilePlatform" class="container-fluid m-0 p-0 d-block col-lg-6">
 				<div id="gameDisplay" class="container-fluid p-1">
-                    <div id="confirm">
-         <div class="message my-2">
-             <p>Your guess is blank, please fix this!</p>
-        </div>
-            <button class="yes gameButton my-2">OK</button>
-         </div>
+					<div id="confirm">
+						<div class="message my-2">
+							<p>Your guess is blank, please fix this!</p>
+						</div>
+						<button class="yes gameButton my-2">OK</button>
+					</div>
 					<div id="newGameCanvas">
 						<div class="container p-0 m-0">
 							<div id="newGameModal" class="modal">
@@ -75,12 +75,40 @@
 											<ul p-0>
 												<li>Guess the name of the Theros: Beyond Death Magic card from flavour
 													text only!</li>
-												<li>Guess incorrectly and lose a life! You've only got 5!</li>
+												<li>Guess incorrectly and lose a life! You've only got 3!</li>
 												<li>Have no idea? Reveal the clues to gain more information.</li>
 												<li>Be careful, as clues cost score points!</li>
 												<li>How high can you score?</li>
 												<li>Challenge your friends!</li>
 											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="endGameCanvas">
+						<div class="container p-0 m-0">
+							<div id="newGameModal" class="modal">
+								<div class="container">
+									<div class="row m-1 p-1">
+										<div class="col-12 text-center">
+											<p class="canvasQuestion">Game Over!</p>
+										</div>
+									</div>
+								</div>
+								<hr id="ruleBreak">
+								<div class="container">
+									<div class="row p-2">
+										<div class="col-12 text-center canvasQuestion">
+											<h6>Submit a User Name for your score?</h6>
+										</div>
+										<div class="col-12 p-0">
+											<form>
+												<input id="userNameInput" type="text" name="userName" class="guessInput" placeholder="User Name">
+												<button type="button"id="scoreSub" class="subButton gameButton startButton stickyButton mt-3" disabled>Submit Score</button>
+												<button id="newGameButton2" class="gameButton my-3" type="button">New Game</button>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -95,12 +123,12 @@
 						</div>
 					</div>
 					<div class="row my-2 scoreRow">
-							<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
-								<p class="scoreText">Points</p>
-							</div>
-							<div class="col-4 scoreCol scoreColRight text-center gameButton">
-								<p id="scoreNum" class="scoreText">3</p>
-							</div>
+						<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
+							<p class="scoreText">Points</p>
+						</div>
+						<div class="col-4 scoreCol scoreColRight text-center gameButton">
+							<p id="scoreNum" class="scoreText">3</p>
+						</div>
 					</div>
 					<div class="row m-1 p-2">
 						<div class="col-12 p-0 text-center">
@@ -121,78 +149,80 @@
 							<p class="scoreText">Lives</p>
 						</div>
 						<div class="col-4 scoreCol scoreColRight text-center gameButton">
-							<p id="livesNum" class="scoreText">5</p>
+							<p id="livesNum" class="scoreText">3</p>
 						</div>
 					</div>
 					<div id="guessingRow" class="row scoreRow">
-                        <form class="wide" autocomplete="off" action="/action_page.php">
-                        <div class="row my-2 px-2">
-                        <div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
-                        <div class="autoComplete">
-                        <input id="guessInput" type="text" name="cardName" class="guessInput" placeholder="Card Name">
+						<form class="wide" autocomplete="off">
+							<div class="row my-2 px-2">
+								<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
+									<div class="autoComplete">
+										<input id="guessInput" type="text" name="cardName" class="guessInput" placeholder="Card Name">
                         </div>
-                        </div>
-                        <div class="col-6 col-6 p-0 scoreCol scoreColRight text-center gameButton">
-                        <button id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
-                        </div>
-                        </div>
-                        </form>
-                        </div>
-						<!--<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
-							<input id="guessInput" class="p-0 m-0" type="text" value=""/>
-					        </div>
-							<div class="col-6 p-0 scoreCol scoreColRight text-center">
-								<button id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
-							</div>
-						</div>-->
-						<div class="container-fluid p-1">
-							<div class="row my-2 clueRow">
-								<div class="col-12">
-									<div class="container clueCont">
-										<p id="clue1" class="clueTextBox"></p>
-										<button id="cButton1" class="clueButton stickyButton" disabled>Reveal Card Colour</button>
+									</div>
+									<div class="col-6 col-6 p-0 scoreCol scoreColRight text-center gameButton">
+										<button type="button"id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
 									</div>
 								</div>
-							</div>
-							<div class="row my-2 clueRow">
-								<div class="col-12">
-									<div class="container clueCont">
-										<p id="clue2" class="clueTextBox">Test</p>
-										<button id="cButton2" class="clueButton stickyButton" disabled>Reveal Converted Mana Cost</button>
-									</div>
+						</form>
+					</div>
+					<div class="container-fluid p-1">
+						<div class="row my-2 clueRowTitle">
+							<div class="col-12 p-0">
+								<div class="container p-0 clueContTitle">
+									<div class="clueTitle stickyButton">
+                                        <p id="clueTitle" class="m-0">Click the buttons to reveal the clues!</p>
+                                    </div>
 								</div>
 							</div>
-							<div class="row my-2 clueRow">
-								<div class="col-12">
-									<div class="container clueCont">
-										<p id="clue3" class="clueTextBox">Test</p>
-										<button id="cButton3" class="clueButton stickyButton" disabled>Reveal Card Type</button>
-									</div>
+						</div>
+						<div class="row my-2 clueRow">
+							<div class="col-12">
+								<div class="container clueCont">
+									<p id="clue1" class="clueTextBox"></p>
+									<button id="cButton1" class="clueButton stickyButton" disabled>Reveal Card Colour</button>
+								</div>
+							</div>
+						</div>
+						<div class="row my-2 clueRow">
+							<div class="col-12">
+								<div class="container clueCont">
+									<p id="clue2" class="clueTextBox">Test</p>
+									<button id="cButton2" class="clueButton stickyButton" disabled>Reveal Converted Mana Cost</button>
+								</div>
+							</div>
+						</div>
+						<div class="row my-2 clueRow">
+							<div class="col-12">
+								<div class="container clueCont">
+									<p id="clue3" class="clueTextBox">Test</p>
+									<button id="cButton3" class="clueButton stickyButton" disabled>Reveal Card Type</button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div id="jsScripts">
-						<script src="https://code.jquery.com/jquery-3.4.1.js"
-							integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
-						</script>
-						<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-							integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-							crossorigin="anonymous">
-						</script>
-						<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-							integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-							crossorigin="anonymous">
-						</script>
-						<script type="text/javascript>"
-							src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-						</script>
-						<script type="text/javascript" src="assets/js/scripts.js"></script>
-					</div>
 				</div>
-				<div class="desktopBuffer d-none d-lg-block col-lg-3"></div>
+				<div id="jsScripts">
+					<script src="https://code.jquery.com/jquery-3.4.1.js"
+						integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+					</script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+						crossorigin="anonymous">
+					</script>
+					<script type="text/javascript>"
+						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+					</script>
+					<script type="text/javascript" src="assets/js/scripts.js"></script>
+				</div>
 			</div>
+			<div class="desktopBuffer d-none d-lg-block col-lg-3"></div>
 		</div>
+	</div>
 </body>
 
 </html>

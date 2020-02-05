@@ -29,6 +29,25 @@ li {
   margin-bottom: 10px;
 }
 
+:focus {
+  outline: lightgreen auto 5px;
+}
+
+button:focus {
+  outline: lightgreen auto 5px;
+}
+
+#clueTitle {
+  line-height: 30px;
+}
+
+.clueContTitle {
+  position: relative;
+  height: 30px;
+  text-align: center;
+  width: 101%;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Global Class Styles*/
 /*----------------------------------------Global Media Queries & Animation Styles*/
@@ -36,6 +55,8 @@ li {
 /*----------------------------------------Landing Container Styles*/
 /*--------------------Landing Container ID Styles*/
 #ruleBreak {
+  margin-top: 5px;
+  margin-bottom: 20px;
   border-top: 1px solid #a5f2f3;
 }
 
@@ -48,7 +69,19 @@ li {
   position: relative;
 }
 
+#userNameInput {
+  border-radius: 5px;
+  border: 0.5px solid #a5f2f3;
+  box-shadow: 0px 0px 15px darkturquoise;
+}
+
 /*--------------------Game Display Class Styles*/
+.userNameField {
+  border-radius: 5px;
+  border: 0.5px solid #a5f2f3;
+  box-shadow: 0px 0px 15px darkturquoise;
+}
+
 /*--------------------Game Display Media Queries & Animations Styles*/
 .mtgCardCont {
   height: 200px;
@@ -66,6 +99,16 @@ li {
   display: none;
 }
 
+#endGameCanvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(135, 206, 250, 0.8);
+  z-index: 3;
+  border-radius: 5px;
+  display: none;
+}
+
 #newGameModal {
   background-color: black;
   Position: absolute;
@@ -73,7 +116,7 @@ li {
   border-radius: 5px;
   top: 50%;
   left: 50%;
-  height: 400px;
+  height: auto;
   width: 300px;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -119,7 +162,7 @@ li {
   border-bottom-right-radius: 5px;
 }
 
-#newGameButton {
+#newGameButton, #newGameButton2 {
   width: 100%;
   border-radius: 5px;
 }
@@ -242,7 +285,7 @@ li {
   border-bottom-left-radius: 5px;
 }
 
-#guessSub {
+#guessSub, #scoreSub {
   padding: 0;
   width: 100%;
   height: 30px;
@@ -272,6 +315,21 @@ li {
   box-shadow: 0px 0px 15px darkturquoise;
 }
 
+.clueTitle {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 90%;
+  left: 5%;
+  z-index: 2;
+  padding: 0;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  border: 0.5px solid #a5f2f3;
+  box-shadow: 0px 0px 15px darkturquoise;
+}
+
 .clueTextBox {
   position: absolute;
   top: 50%;
@@ -290,6 +348,10 @@ li {
 
 .clueRow {
   height: 50px;
+}
+
+.clueRowTile {
+  height: 30px;
 }
 
 #landingContainer {
@@ -452,11 +514,14 @@ URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-
   background-color: brown;
 }
 
+.gold {
+  background-color: gold;
+}
+
 #confirm {
   display: none;
   top: 50%;
   left: 50%;
-  text-align: center;
   background-color: black;
   color: white;
   border: 1px solid lightcyan;
@@ -492,6 +557,10 @@ URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-
   font-weight: 800;
 }
 
+#clue3 {
+  font-size: 0.75em;
+}
+
 /*----------------------------------------External Code*/
 /*--------------------From w3schools*/
 .autocomplete {
@@ -506,6 +575,7 @@ URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-
 }
 
 input {
+  text-align: center;
   border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
@@ -524,7 +594,7 @@ input[type=submit] {
 
 .autocomplete-items {
   position: absolute;
-  border: 1px solid #d4d4d4;
+  border-radius: 5px;
   border-bottom: none;
   border-top: none;
   z-index: 99;
@@ -538,7 +608,8 @@ input[type=submit] {
   padding: 10px;
   cursor: pointer;
   background-color: black;
-  border-bottom: 1px solid #d4d4d4;
+  border: 1px solid #a5f2f3;
+  border-radius: 5px;
 }
 
 .autocomplete-items div:hover {
@@ -554,5 +625,22 @@ input[type=submit] {
 
 /*--------------------From w3schools*/
 /*# sourceMappingURL=output.css.map */
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
 
 /*# sourceMappingURL=output.css.map */

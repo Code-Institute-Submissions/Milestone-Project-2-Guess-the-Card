@@ -3,7 +3,7 @@ const baseURL = "https://api.scryfall.com/cards/random?q=set:thb ft:/.+/";
 const catArray = "https://api.scryfall.com/catalog/card-names";
 var card1 = [];
 var cardNames = [];
-var newScore = 5;
+var newScore = 1;
 var decrement = 1;
 var callId = "";
 var scoreElement = document.getElementById('scoreNum');
@@ -13,19 +13,21 @@ var storedCardNames = JSON.parse(localStorage.getItem("cardNames"));
 /*--------------------Data Functions*/
 
 function getCatData() {
+if (storedCardNames == null) {
 
-    var xhr = new XMLHttpRequest();
+      var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", catArray);
-    xhr.send();
+      xhr.open("GET", catArray);
+      xhr.send();
 
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var catCards = JSON.parse(this.responseText);
-            cardNames = catCards.data;
-            localStorage.setItem("cardNames", JSON.stringify(cardNames));
-        };
-    };
+      xhr.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              var catCards = JSON.parse(this.responseText);
+              cardNames = catCards.data;
+              localStorage.setItem("cardNames", JSON.stringify(cardNames));
+          };
+      };
+    }
 };
 
 function getData(cb) {
@@ -76,7 +78,7 @@ $(".startButton").click(function guessTheCard(name) {
     if (callID == "newGameYes") {
         $(".stickyButton").removeAttr("disabled");
         $("#scoreNum").html(3);
-        $("#livesNum").html(5);
+        $("#livesNum").html(3);
         $(".clueButton").fadeIn(1000);
         $("#clue1").removeClass(card1[2]);
         getData(printData);
@@ -94,9 +96,11 @@ $(".startButton").click(function guessTheCard(name) {
                 $("#scoreNum").html(Number(score) + newScore);
                 $("#scoreNum").addClass("flashUp");
                 $("#flavourTextCol").addClass("flashUp");
-                $("#guessInput").val("");
-                $("#clue1").removeClass(card1[2]);
                 $(".clueButton").fadeIn(1000);
+                $("#guessInput").val("");
+                $("#clue1").removeClass(card1[2]).removeClass("gold").removeClass("brown");
+                $("#clue2").html("");
+                $("#clue3").html("");
                 setTimeout(function () {
                     $("#scoreNum").removeClass("flashUp");
                     $("#flavourTextCol").removeClass("flashUp");
@@ -106,14 +110,20 @@ $(".startButton").click(function guessTheCard(name) {
                 $("#livesNum").html(Number(life) - decrement);
                 $("#livesNum").addClass("flashDown");
                 $("#flavourTextCol").addClass("flashDown");
-                $("#guessInput").val("");
-                $("#clue1").removeClass(card1[2]);
                 $(".clueButton").fadeIn(1000);
+                $("#guessInput").val("");
+                $("#clue1").removeClass(card1[2]).removeClass("gold").removeClass("brown");
+                $("#clue2").html("");
+                $("#clue3").html("");
                 setTimeout(function () {
                     $("#livesNum").removeClass("flashDown");
                     $("#flavourTextCol").removeClass("flashDown");
                 }, 1000)
+                if ($("#livesNum") == 0) {
+                    return;
+                } else {
                 getData(printData);
+                };
             };
         };
     };
@@ -124,16 +134,43 @@ $(".clueButton").click(function () {
     var score = $("#scoreNum").html();
 
     if ($(this).attr("id") == "cButton1") {
-        $("#clue1").addClass(card1[2]);
+        if(card1[2].length == 2) {
+            $("#clue1").addClass("gold");
+        } else if(card1[2].length == 1) {
+            $("#clue1").addClass(card1[2]);
+        } else {
+            $("#clue1").addClass("brown");
+        };
         $(this).fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
             $("#scoreNum").removeClass("flashDown");
         }, 1000)
-    } else {
-        console.log("No!");
-    };
+    } else if ($(this).attr("id") == "cButton2") {
+        $("#clue2").html(card1[4]);
+        $(this).fadeOut(1000);
+        $("#scoreNum").html(Number(score) - decrement);
+        $("#scoreNum").addClass("flashDown");
+        setTimeout(function () {
+            $("#scoreNum").removeClass("flashDown");
+        }, 1000)
+    } else if ($(this).attr("id") == "cButton3") {
+        $("#clue3").html(card1[3]);
+        $(this).fadeOut(1000);
+        $("#scoreNum").html(Number(score) - decrement);
+        $("#scoreNum").addClass("flashDown");
+        setTimeout(function () {
+            $("#scoreNum").removeClass("flashDown");
+        }, 1000)
+};
+});
+
+$("#newGameButton2").click(function() {
+    $("#endGameCanvas").fadeOut(1000);
+    setTimeout(function () {
+            $("#newGameCanvas").fadeIn(1000);
+        }, 1000);
 });
 
 /*----------------------------------------Listeners*/
@@ -149,9 +186,11 @@ window.addEventListener('load', function () {
 
     function myFunction() {
         if (scoreElement.innerHTML == 0) {
-            $(".clueButton").addClass("cannotAfford");
             $(".clueButton").attr("disabled", true);
-            $(".clueButton").html("Score point to buy more clues!");
+            setTimeout(function(){ 
+                $(".clueButton").html("Clues cost points, get some.");
+                $(".clueButton").addClass("cannotAfford"); 
+            }, 2000);
         } else if (scoreElement.innerHTML > 0) {
             $(".clueButton").removeClass("cannotAfford");
             $(".clueButton").attr("disabled", false);
@@ -161,6 +200,22 @@ window.addEventListener('load', function () {
         }
     }
 
+});
+
+window.addEventListener('load', function () {
+    var lifeElement = document.getElementById('livesNum');
+
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+    var observer = new MutationObserver(myFunction);
+    observer.observe(lifeElement, {
+        childList: true
+    });
+
+    function myFunction() {
+        if (lifeElement.innerHTML == 0) {
+            $("#endGameCanvas").fadeIn(1000);
+        };
+    }
 });
 
 /*----------------------------------------Document Ready*/
@@ -201,7 +256,10 @@ function autocomplete(inp, arr) {
           b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
           b.innerHTML += arr[i].substr(val.length);
           /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.value = arr[i];
+            b.appendChild(input);
           /*execute a function when someone clicks on the item value (DIV element):*/
               b.addEventListener("click", function(e) {
               /*insert the value for the autocomplete text field:*/
@@ -273,5 +331,3 @@ document.addEventListener("click", function (e) {
 
 autocomplete(document.getElementById("guessInput"), storedCardNames);
 /*--------------------From w3schools*/
-
-
