@@ -96,7 +96,7 @@
 					</div>
 					<div class="row my-2 scoreRow">
 							<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
-								<p class="scoreText">Score</p>
+								<p class="scoreText">Points</p>
 							</div>
 							<div class="col-4 scoreCol scoreColRight text-center gameButton">
 								<p id="scoreNum" class="scoreText">3</p>
@@ -124,14 +124,27 @@
 							<p id="livesNum" class="scoreText">5</p>
 						</div>
 					</div>
-					<div class="row m-2 scoreRow">
-						<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
+					<div id="guessingRow" class="row scoreRow">
+                        <form class="wide" autocomplete="off" action="/action_page.php">
+                        <div class="row my-2 px-2">
+                        <div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
+                        <div class="autoComplete">
+                        <input id="guessInput" type="text" name="cardName" class="guessInput" placeholder="Card Name">
+                        </div>
+                        </div>
+                        <div class="col-6 col-6 p-0 scoreCol scoreColRight text-center gameButton">
+                        <button id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+						<!--<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
 							<input id="guessInput" class="p-0 m-0" type="text" value=""/>
 					        </div>
 							<div class="col-6 p-0 scoreCol scoreColRight text-center">
 								<button id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
 							</div>
-						</div>
+						</div>-->
 						<div class="container-fluid p-1">
 							<div class="row my-2 clueRow">
 								<div class="col-12">
