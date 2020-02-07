@@ -5,9 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js" integrity="sha256-PePX8Jc4TIxzzVz0Qe4NsH3OUU8+Y49DBWvYgggNqkY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js" integrity="sha256-qazAASTTgUrq9SOYkPSB3oEuqbhn+2j4kxGkVZ0GKjY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js" integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.css" integrity="sha256-YzqdEMEXu1sH1t2Y9tk3XhKhxy1xMWvcA1koZx43k+8=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/output.css">
+    
 	<title>Document</title>
 </head>
 
@@ -16,14 +20,14 @@
 	<div id="landingContainer" class="container-fluid">
 		<div class="row headRow">
 			<div class="col-12 p-0">
-				<header id="headerContainer" class="container-fluid text-center p-0">
+				<header class="container-fluid text-center p-0">
 					<h3 class="headTitle">Flavour Points:</h3>
 				</header>
 			</div>
 		</div>
 		<div class="row headRow">
 			<div class="col-12 p-0">
-				<header id="headerContainer" class="container-fluid text-center p-0">
+				<header class="container-fluid text-center p-0">
 					<h6 class="headTitle">Theros: Beyond Death! Edition</h6>
 				</header>
 			</div>
@@ -32,7 +36,7 @@
 			<div class="col-12 p-0">
 				<div id="adContainter" class="container-fluid p-2">
 					<a href="https://starcitygames.com/shop/new-releases/" target="_blank">
-						<h3 class="adTitle"></h3>
+						<div class="adTitle"></div>
 					</a>
 				</div>
 			</div>
@@ -46,6 +50,12 @@
 					<div id="confirm">
 						<div class="message my-2">
 							<p>Your guess is blank, please fix this!</p>
+						</div>
+						<button class="yes gameButton my-2">OK</button>
+					</div>
+					<div id="errorTwo">
+						<div class="message my-2">
+							<p>Error loading card list, you can continue without the auto completing list.</p>
 						</div>
 						<button class="yes gameButton my-2">OK</button>
 					</div>
@@ -64,12 +74,12 @@
 										</div>
 									</div>
 								</div>
-								<hr id="ruleBreak">
+								<hr class="ruleBreak">
 								<div class="container">
 									<div class="row">
 										<div class="col-12 text-center canvasQuestion">
 											<h6>Rules!</h6>
-											<ul p-0="">
+											<ul class="p-0">
 												<li>Guess the name of the Theros: Beyond Death Magic card from flavour
 													text only!</li>
 												<li>Guess incorrectly and lose a life! You've only got 3!</li>
@@ -81,7 +91,7 @@
 										</div>
 									</div>
 								</div>
-                                <hr id="ruleBreak">
+								<hr class="ruleBreak">
 								<div class="container">
 									<div class="row m-3 p-1">
 										<div class="col-12 text-center">
@@ -94,7 +104,7 @@
 					</div>
 					<div id="endGameCanvas">
 						<div class="container p-0 m-0">
-							<div id="newGameModal" class="modal">
+							<div id="endGameModal" class="modal">
 								<div class="container">
 									<div class="row m-1 p-1">
 										<div class="col-12 text-center">
@@ -102,7 +112,7 @@
 										</div>
 									</div>
 								</div>
-								<hr id="ruleBreak">
+								<hr class="ruleBreak">
 								<div class="container">
 									<div class="row p-2">
 										<div class="col-12 text-center canvasQuestion">
@@ -111,7 +121,7 @@
 										<div class="col-12 p-0">
 											<form>
 												<input id="userNameInput" type="text" name="userName" class="guessInput" placeholder="User Name">
-												<button type="button"id="scoreSub" class="subButton gameButton startButton stickyButton mt-3" disabled>Submit Score</button>
+												<button type="button" id="scoreSub" class="subButton gameButton startButton stickyButton mt-3" disabled>Submit Score</button>
 												<button id="newGameButton2" class="gameButton my-3" type="button">New Game</button>
 											</form>
 										</div>
@@ -158,10 +168,10 @@
 								<div class="col-6 p-0 scoreCol scoreColLeft text-center gameButton">
 									<div class="autoComplete">
 										<input id="guessInput" type="text" name="cardName" class="guessInput" placeholder="Card Name">
-                        </div>
+                                    </div>
 									</div>
 									<div class="col-6 col-6 p-0 scoreCol scoreColRight text-center gameButton">
-										<button type="button"id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
+										<button type="button" id="guessSub" class="subButton gameButton startButton stickyButton" disabled>Submit Guess</button>
 									</div>
 								</div>
 						</form>
@@ -214,10 +224,10 @@
 						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 						crossorigin="anonymous">
 					</script>
-					<script type="text/javascript>"
-						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 					</script>
-					<script type="text/javascript" src="assets/js/scripts.js"></script>
+					<script src="assets/js/scripts.js"></script>
+                    <script src="assets/js/calcSpec.js"></script>
 				</div>
 			</div>
 			<div class="desktopBuffer d-none d-lg-block col-lg-3"></div>

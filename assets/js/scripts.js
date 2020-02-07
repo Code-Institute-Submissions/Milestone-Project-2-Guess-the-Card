@@ -5,34 +5,27 @@ var card1 = [];
 var cardNames = [];
 var newScore = 1;
 var decrement = 1;
-var callId = "";
-var scoreElement = document.getElementById('scoreNum');
-var lifeElement = document.getElementById('livesNum');
-var storedCardNames = JSON.parse(localStorage.getItem("cardNamesKey"));
 /*----------------------------------------Standard Functions*/
 /*--------------------Data Functions*/
 
 function getCatData(cb2) {
-    if (storedCardNames == null) {
 
         var xhr = new XMLHttpRequest();
 
         xhr.open("GET", catArray);
         xhr.send();
+        xhr.onerror = function() {
+            functionErrorTwo();
+        }
 
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var catCards = JSON.parse(this.responseText);
                 cardNames = catCards.data;
-                localStorage.setItem("cardNamesKey", JSON.stringify(cardNames));
-                storedCardNames = JSON.parse(localStorage.getItem("cardNamesKey"));
-                cb2(document.getElementById("guessInput"), storedCardNames);
-            };
-        };
-    } else {
-        cb2(document.getElementById("guessInput"), storedCardNames);
-    }
-};
+                cb2(document.getElementById("guessInput"), cardNames);
+            } else {}
+        }
+}
 
 getCatData(autocomplete);
 
@@ -71,11 +64,21 @@ function functionAlert(msg, myYes) {
     confirmBox.show();
 }
 
+function functionErrorTwo(msg, myYes) {
+    var confirmBox = $("#errorTwo");
+    confirmBox.find(".message").text(msg);
+    confirmBox.find(".yes").unbind().click(function () {
+        confirmBox.hide();
+    });
+    confirmBox.find(".yes").click(myYes);
+    confirmBox.show();
+}
+
 /*----------------------------------------onClick Functions*/
 
 $("#newGameButton").click(function () {
     $("#newGameCanvas").fadeIn(1000);
-})
+});
 
 $(".startButton").click(function guessTheCard(name) {
 
@@ -90,11 +93,11 @@ $(".startButton").click(function guessTheCard(name) {
         getData(printData);
     } else if (callID == "guessSub") {
 
-        var name = $("#guessInput").val();
+        name = $("#guessInput").val();
         var score = $("#scoreNum").html();
         var life = $("#livesNum").html();
 
-        if (name == "") {
+        if (name === "") {
             functionAlert();
             return;
         } else {
@@ -124,60 +127,108 @@ $(".startButton").click(function guessTheCard(name) {
                 setTimeout(function () {
                     $("#livesNum").removeClass("flashDown");
                     $("#flavourTextCol").removeClass("flashDown");
-                }, 1000)
-                if ($("#livesNum") == 0) {
+                }, 1000);
+                if ($("#livesNum") === 0) {
                     return;
                 } else {
                     getData(printData);
-                };
-            };
-        };
-    };
+                }
+            }
+        }
+    }
 });
 
-$(".clueButton").click(function () {
+$(".clueButton").click(clueButtonReveals($(this).attr("id")))
 
-    var score = $("#scoreNum").html();
+    /*var score = $("#scoreNum").html();
+    var id = $(this).attr("id");
 
-    if ($(this).attr("id") == "cButton1") {
+    if (id == "cButton1") {
         if (card1[2].length == 2) {
             $("#clue1").addClass("gold");
         } else if (card1[2].length == 1) {
             $("#clue1").addClass(card1[2]);
-            console.log(typeof(card1[2][0]));
-            switch(card1[2][0]) {
+            console.log(typeof (card1[2][0]));
+            switch (card1[2][0]) {
                 case "W":
                     console.log("tester");
                     $("#clue1").html("White");
-            };
+            }
         } else {
             $("#clue1").addClass("brown");
-        };
+        }
 
         $(this).fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
             $("#scoreNum").removeClass("flashDown");
-        }, 1000)
-    } else if ($(this).attr("id") == "cButton2") {
+        }, 1000);
+    } else if (id == "cButton2") {
         $("#clue2").html(card1[4]);
         $(this).fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
             $("#scoreNum").removeClass("flashDown");
-        }, 1000)
-    } else if ($(this).attr("id") == "cButton3") {
+        }, 1000);
+    } else if (id == "cButton3") {
         $("#clue3").html(card1[3]);
         $(this).fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
             $("#scoreNum").removeClass("flashDown");
-        }, 1000)
-    };
-});
+        }, 1000);
+    }
+});*/
+
+function clueButtonReveals(id) {
+
+    var score = $("#scoreNum").html();
+    var id = $(this).attr("id");
+
+    if (id == "cButton1") {
+        if (card1[2].length == 2) {
+            $("#clue1").addClass("gold");
+        } else if (card1[2].length == 1) {
+            $("#clue1").addClass(card1[2]);
+            console.log(typeof (card1[2][0]));
+            switch (card1[2][0]) {
+                case "W":
+                    console.log("tester");
+                    $("#clue1").html("White");
+            }
+        } else {
+            $("#clue1").addClass("brown");
+        }
+
+        $(this).fadeOut(1000);
+        $("#scoreNum").html(Number(score) - decrement);
+        $("#scoreNum").addClass("flashDown");
+        setTimeout(function () {
+            $("#scoreNum").removeClass("flashDown");
+        }, 1000);
+    } else if (id == "cButton2") {
+        $("#clue2").html(card1[4]);
+        $(this).fadeOut(1000);
+        $("#scoreNum").html(Number(score) - decrement);
+        $("#scoreNum").addClass("flashDown");
+        setTimeout(function () {
+            $("#scoreNum").removeClass("flashDown");
+        }, 1000);
+    } else if (id == "cButton3") {
+        $("#clue3").html(card1[3]);
+        $(this).fadeOut(1000);
+        $("#scoreNum").html(Number(score) - decrement);
+        $("#scoreNum").addClass("flashDown");
+        setTimeout(function () {
+            $("#scoreNum").removeClass("flashDown");
+        }, 1000);
+    }
+};
+
+
 
 $("#newGameButton2").click(function () {
     $("#endGameCanvas").fadeOut(1000);
@@ -190,7 +241,6 @@ $("#newGameButton2").click(function () {
 
 window.addEventListener('load', function () {
     var scoreElement = document.getElementById('scoreNum');
-
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
     var observer = new MutationObserver(myFunction);
     observer.observe(scoreElement, {
@@ -198,7 +248,7 @@ window.addEventListener('load', function () {
     });
 
     function myFunction() {
-        if (scoreElement.innerHTML == 0) {
+        if (scoreElement.innerHTML === 0) {
             $(".clueButton").attr("disabled", true);
             setTimeout(function () {
                 $(".clueButton").html("Clues cost points, get some.");
@@ -225,15 +275,14 @@ window.addEventListener('load', function () {
     });
 
     function myFunction() {
-        if (lifeElement.innerHTML == 0) {
+        if (lifeElement.innerHTML === 0) {
             $("#endGameCanvas").fadeIn(1000);
-        };
+        }
     }
 });
 
 window.addEventListener("load", function () {
     var clueElement = document.getElementById("clue1");
-
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
     var observer = new MutationObserver(myFunction);
     observer.observe(clueElement, {
@@ -243,7 +292,7 @@ window.addEventListener("load", function () {
     function myFunction() {
         if (clueElement.classList.contains("W")) {
             $("#clue1").html("White");
-        };
+        }
     }
 });
 
@@ -254,15 +303,17 @@ window.addEventListener("load", function () {
 /*--------------------From w3schools*/
 
 function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
+	/*the autocomplete function takes two arguments,
+	the text field element and an array of possible autocompleted values:*/
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function (e) {
+    inp.addEventListener("input", function () {
         var a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         closeAllLists();
-        if (!val) { return false; }
+        if (!val) {
+            return false;
+        }
         currentFocus = -1;
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
@@ -285,11 +336,11 @@ function autocomplete(inp, arr) {
                 input.value = arr[i];
                 b.appendChild(input);
                 /*execute a function when someone clicks on the item value (DIV element):*/
-                b.addEventListener("click", function (e) {
+                b.addEventListener("click", function () {
                     /*insert the value for the autocomplete text field:*/
                     inp.value = this.getElementsByTagName("input")[0].value;
-                    /*close the list of autocompleted values,
-                    (or any other open lists of autocompleted values:*/
+					/*close the list of autocompleted values,
+					(or any other open lists of autocompleted values:*/
                     closeAllLists();
                 });
                 a.appendChild(b);
@@ -301,14 +352,14 @@ function autocomplete(inp, arr) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
-            /*If the arrow DOWN key is pressed,
-            increase the currentFocus variable:*/
+			/*If the arrow DOWN key is pressed,
+			increase the currentFocus variable:*/
             currentFocus++;
             /*and and make the current item more visible:*/
             addActive(x);
         } else if (e.keyCode == 38) { //up
-            /*If the arrow UP key is pressed,
-            decrease the currentFocus variable:*/
+			/*If the arrow UP key is pressed,
+			decrease the currentFocus variable:*/
             currentFocus--;
             /*and and make the current item more visible:*/
             addActive(x);
@@ -321,6 +372,7 @@ function autocomplete(inp, arr) {
             }
         }
     });
+
     function addActive(x) {
         /*a function to classify an item as "active":*/
         if (!x) return false;
@@ -331,15 +383,17 @@ function autocomplete(inp, arr) {
         /*add class "autocomplete-active":*/
         x[currentFocus].classList.add("autocomplete-active");
     }
+
     function removeActive(x) {
         /*a function to remove the "active" class from all autocomplete items:*/
         for (var i = 0; i < x.length; i++) {
             x[i].classList.remove("autocomplete-active");
         }
     }
+
     function closeAllLists(elmnt) {
-        /*close all autocomplete lists in the document,
-        except the one passed as an argument:*/
+		/*close all autocomplete lists in the document,
+		except the one passed as an argument:*/
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
             if (elmnt != x[i] && elmnt != inp) {
@@ -352,9 +406,7 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-
 /*--------------------From w3schools*/
-
 
 /*function callback(mutationsList) {
     mutationsList.forEach(mutation => {

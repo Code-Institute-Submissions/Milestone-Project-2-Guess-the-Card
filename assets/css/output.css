@@ -1,4 +1,4 @@
-/*npm install -g sass  sass --watch assets/sass/input.scss assets/css/output.css*/
+/*npm install -g sass sass --watch assets/sass/input.scss assets/css/output.css*/
 /*----------------------------------------SASS Variables*/
 /*----------------------------------------Element Styles*/
 html {
@@ -54,7 +54,7 @@ button:focus {
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------Landing Container Styles*/
 /*--------------------Landing Container ID Styles*/
-#ruleBreak {
+.ruleBreak {
   margin-top: 5px;
   margin-bottom: 20px;
   border-top: 1px solid #a5f2f3;
@@ -387,8 +387,7 @@ button:focus {
     background-size: cover;
   }
 }
-/*Stackoverflow - Vinay (Altered the code so I could flash up and down with score/life changes)
-URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-in-jquery */
+/*Stackoverflow - Vinay (Altered the code so I could flash up and down with score/life changes) URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-in-jquery */
 .flashUp {
   animation: flashUp 1s ease-out;
   animation-iteration-count: 1;
@@ -547,6 +546,39 @@ URL:https://stackoverflow.com/questions/275931/how-do-you-make-an-element-flash-
 }
 
 #confirm .message {
+  text-align: center;
+}
+
+#errorTwo {
+  display: none;
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  color: white;
+  border: 1px solid lightcyan;
+  border-radius: 5px;
+  position: absolute;
+  width: 350px;
+  height: 125px;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 5;
+  box-shadow: 0px 0px 15px darkturquoise;
+}
+
+#errorTwo button {
+  display: inline-block;
+  border: 1px solid lightcyan;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+#errorTwo .message {
   text-align: center;
 }
 
