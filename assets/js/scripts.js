@@ -194,7 +194,7 @@ window.addEventListener('load', function () {
     });
 
     function myFunction() {
-        if (scoreElement.innerHTML === 0) {
+        if (scoreElement.innerHTML == 0) {
             $(".clueButton").attr("disabled", true);
             setTimeout(function () {
                 $(".clueButton").html("Clues cost points, get some.");
@@ -221,6 +221,9 @@ window.addEventListener('load', function () {
 
     function myFunction() {
         if (lifeElement.innerHTML == 0) {
+            finalScore = $("#scoreNum").html();
+            $("#finalScore").html(finalScore);
+            console.log(finalScore);
             $("#endGameCanvas").fadeIn(1000);
         };
     }

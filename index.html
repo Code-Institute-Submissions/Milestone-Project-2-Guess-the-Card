@@ -110,14 +110,25 @@
 								<div class="container">
 									<div class="row p-2">
 										<div class="col-12 text-center canvasQuestion">
-											<h6>Submit a User Name for your score?</h6>
+											<h6></h6>
 										</div>
 										<div class="col-12 p-0">
-											<form>
-												<input id="userNameInput" type="text" name="userName" class="guessInput" placeholder="User Name">
-												<button type="button" id="scoreSub" class="subButton gameButton startButton stickyButton mt-3" disabled>Submit Score</button>
-												<button id="newGameButton2" class="gameButton my-3" type="button">New Game</button>
-											</form>
+											<div class="container">
+												<div class="row m-1 p-1">
+													<div class="col-12 text-center">
+														<p class="canvasQuestion">You Scored:</p>
+													</div>
+												</div>
+											</div>
+											<div class="container">
+												<div class="row m-1 p-1">
+													<div class="col-12 text-center">
+														<p id="finalScore" class="canvasQuestion"> </p>
+													</div>
+												</div>
+											</div>
+											<p class="canvasQuestion"></p>
+											<button id="newGameButton2" class="gameButton my-3" type="button">New Game</button>
 										</div>
 									</div>
 								</div>
