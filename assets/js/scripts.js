@@ -430,3 +430,11 @@ const mutationObserver = new MutationObserver(callback)
             document.getElementById("clue1"),
             { attributes: true }
         );*/
+
+    function add(x, y) {
+        return x + y;
+    };
+
+    function minus(x, y) {
+        return x - y;
+    };

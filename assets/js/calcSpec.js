@@ -1,21 +1,47 @@
 describe("AutoComplete Function", function () {
     describe("Launch Test", function () {
-        it("Should be Undefined", function () {
-            expect(getCatData(autocomplete)).toBe(undefined)
+
+        //arrange 
+        beforeEach(function () {
+            spyOn(window, 'getCatData');
+        });
+
+        //act
+        getCatData(autocomplete);
+
+
+        //arrange
+        it("Should be called", function () {
+            expect(window.getCatData).toHaveBeenCalled();
         });
     });
 });
 
-describe("Clue Reveals", function() {
-    describe("Second Clue Reveal", function() {
-        it("Should be Number", function() {
+describe("Math Functions", () => {
+    it("Gets the Sum of 2 Numbers", () => {
+        //arrange
+        const num1 = 2;
+        const num2 = 3;
 
-            var testElement = document.getElementById("clue2")
+        //act
+        const result = add(num1, num2);
 
-             expect(clueButtonReveals(params)).toBeString("clue2");
-             expect((testElement).html).toBeNumber();
-        })
-    })
+        //arrange
+        expect(result).toBe(5);
+    });
+
+    it("Returns subtracted value", () => {
+        //arrange
+        const num1 = 2;
+        const num2 = 3;
+
+        //act
+        const result = minus(num1, num2);
+
+        //arrange
+        expect(result).toBe(-1);
+    });
+
 })
 
 

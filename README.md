@@ -2,8 +2,6 @@
 
 https://jpmurdie.github.io/Milestone-Project-2-Guess-the-Card/
 
-/*5 Lives, keep going until you run out of lives, how many cards you guess = your score?*/
-
 # Flavour Points
 
 This website will be designed as a game to test and challenge the knowledge of MtG fans based on MtG flavour and lore.
@@ -39,10 +37,8 @@ We can track footfall impact on the advertisers website to see if the process is
 
 ### Design mockups
 
-Design some mock ups to go here!
+![alt text](https://github.com/JPMurdie/Milestone-Project-2-Guess-the-Card/blob/895a62b8c72a795dc201ff524152b1d1da05e7a6/assets/imgs/FirstMoq.png "Logo Title Text 1")
 
-
- 
 
 ## Features
 
