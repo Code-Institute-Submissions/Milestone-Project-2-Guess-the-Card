@@ -8,26 +8,26 @@ var decrement = 1;
 /*----------------------------------------Standard Functions*/
 /*--------------------Data Functions*/
 
-function getCatData(cb2) {
+function fetchCardList(cb2) {
 
-        var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
-        xhr.open("GET", catArray);
-        xhr.send();
-        xhr.onerror = function() {
-            functionErrorTwo();
-        }
+    xhr.open("GET", catArray);
+    xhr.send();
+    xhr.onerror = function () {
+        functionErrorTwo();
+    }
 
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var catCards = JSON.parse(this.responseText);
-                cardNames = catCards.data;
-                cb2(document.getElementById("guessInput"), cardNames);
-            } else {}
-        }
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var catCards = JSON.parse(this.responseText);
+            cardNames = catCards.data;
+            cb2(document.getElementById("guessInput"), cardNames);
+        } else { }
+    }
 }
 
-getCatData(autocomplete);
+fetchCardList(autocomplete);
 
 function getData(cb) {
 
@@ -45,11 +45,9 @@ function getData(cb) {
 
 function printData(data) {
     $("#newGameCanvas").fadeOut(1000);
-    console.dir(data);
     $('#flavourTextData').html(data.flavor_text);
     card1 = [];
     card1.push(data.name, data.flavor_text, data.colors, data.type_line, data.cmc, data.image_uris.normal);
-    console.log(card1);
 }
 
 /*--------------------Called Functions*/
@@ -83,7 +81,6 @@ $("#newGameButton").click(function () {
 $(".startButton").click(function guessTheCard(name) {
 
     var callID = $(this).attr("id");
-    console.log(callID);
     if (callID == "newGameYes") {
         $(".stickyButton").removeAttr("disabled");
         $("#scoreNum").html(3);
@@ -128,7 +125,7 @@ $(".startButton").click(function guessTheCard(name) {
                     $("#livesNum").removeClass("flashDown");
                     $("#flavourTextCol").removeClass("flashDown");
                 }, 1000);
-                if ($("#livesNum") === 0) {
+                if ($("#livesNum") == 0) {
                     return;
                 } else {
                     getData(printData);
@@ -138,72 +135,23 @@ $(".startButton").click(function guessTheCard(name) {
     }
 });
 
-$(".clueButton").click(clueButtonReveals($(this).attr("id")))
-
-    /*var score = $("#scoreNum").html();
-    var id = $(this).attr("id");
-
-    if (id == "cButton1") {
-        if (card1[2].length == 2) {
-            $("#clue1").addClass("gold");
-        } else if (card1[2].length == 1) {
-            $("#clue1").addClass(card1[2]);
-            console.log(typeof (card1[2][0]));
-            switch (card1[2][0]) {
-                case "W":
-                    console.log("tester");
-                    $("#clue1").html("White");
-            }
-        } else {
-            $("#clue1").addClass("brown");
-        }
-
-        $(this).fadeOut(1000);
-        $("#scoreNum").html(Number(score) - decrement);
-        $("#scoreNum").addClass("flashDown");
-        setTimeout(function () {
-            $("#scoreNum").removeClass("flashDown");
-        }, 1000);
-    } else if (id == "cButton2") {
-        $("#clue2").html(card1[4]);
-        $(this).fadeOut(1000);
-        $("#scoreNum").html(Number(score) - decrement);
-        $("#scoreNum").addClass("flashDown");
-        setTimeout(function () {
-            $("#scoreNum").removeClass("flashDown");
-        }, 1000);
-    } else if (id == "cButton3") {
-        $("#clue3").html(card1[3]);
-        $(this).fadeOut(1000);
-        $("#scoreNum").html(Number(score) - decrement);
-        $("#scoreNum").addClass("flashDown");
-        setTimeout(function () {
-            $("#scoreNum").removeClass("flashDown");
-        }, 1000);
-    }
-});*/
+$(".clueButton").click(function () {
+    id = $(this).attr("id")
+    clueButtonReveals(id);
+});
 
 function clueButtonReveals(id) {
 
     var score = $("#scoreNum").html();
-    var id = $(this).attr("id");
-
     if (id == "cButton1") {
         if (card1[2].length == 2) {
             $("#clue1").addClass("gold");
         } else if (card1[2].length == 1) {
             $("#clue1").addClass(card1[2]);
-            console.log(typeof (card1[2][0]));
-            switch (card1[2][0]) {
-                case "W":
-                    console.log("tester");
-                    $("#clue1").html("White");
-            }
         } else {
             $("#clue1").addClass("brown");
         }
-
-        $(this).fadeOut(1000);
+        $("#cButton1").fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
@@ -211,7 +159,7 @@ function clueButtonReveals(id) {
         }, 1000);
     } else if (id == "cButton2") {
         $("#clue2").html(card1[4]);
-        $(this).fadeOut(1000);
+        $("#cButton2").fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
@@ -219,7 +167,7 @@ function clueButtonReveals(id) {
         }, 1000);
     } else if (id == "cButton3") {
         $("#clue3").html(card1[3]);
-        $(this).fadeOut(1000);
+        $("#cButton3").fadeOut(1000);
         $("#scoreNum").html(Number(score) - decrement);
         $("#scoreNum").addClass("flashDown");
         setTimeout(function () {
@@ -227,8 +175,6 @@ function clueButtonReveals(id) {
         }, 1000);
     }
 };
-
-
 
 $("#newGameButton2").click(function () {
     $("#endGameCanvas").fadeOut(1000);
@@ -259,10 +205,9 @@ window.addEventListener('load', function () {
             $(".clueButton").attr("disabled", false);
             $("#cButton1").html("Reveal Card Colour");
             $("#cButton2").html("Reveal Converted Mana Cost");
-            $("#cButton3").html("Reveal Card Type");
+            $("#cButton3").html("Reveal Card Type Line");
         }
     }
-
 });
 
 window.addEventListener('load', function () {
@@ -275,9 +220,9 @@ window.addEventListener('load', function () {
     });
 
     function myFunction() {
-        if (lifeElement.innerHTML === 0) {
+        if (lifeElement.innerHTML == 0) {
             $("#endGameCanvas").fadeIn(1000);
-        }
+        };
     }
 });
 
@@ -408,33 +353,10 @@ function autocomplete(inp, arr) {
 }
 /*--------------------From w3schools*/
 
-/*function callback(mutationsList) {
-    mutationsList.forEach(mutation => {
-        if (mutation.attributeName === "class") {
-            if ($("#clue1").hasClass("W") == true) {
-                setTimeout(function () {
-                    $("#clue1").html("White");
-                    console.log("tester");
-                }, 2000)
-            };
-        };
-    });
-    setTimeout(function() {
-        mutationObserver.disconnect();
-    }, 6000)
+function add(x, y) {
+    return x + y;
 };
 
-const mutationObserver = new MutationObserver(callback)
-
-        mutationObserver.observe(
-            document.getElementById("clue1"),
-            { attributes: true }
-        );*/
-
-    function add(x, y) {
-        return x + y;
-    };
-
-    function minus(x, y) {
-        return x - y;
-    };
+function minus(x, y) {
+    return x - y;
+};

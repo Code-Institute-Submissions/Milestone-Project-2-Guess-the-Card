@@ -1,7 +1,5 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/JPMurdie/Milestone-Project-2-Guess-the-Card) 
 
-https://jpmurdie.github.io/Milestone-Project-2-Guess-the-Card/
-
 # Flavour Points
 
 This website will be designed as a game to test and challenge the knowledge of MtG fans based on MtG flavour and lore.
@@ -35,73 +33,72 @@ Example:
 Player A shares the link with a max score of 35 points. They challenge their MtG facebook friends to play the game and beat their score, each of them does the same. This will expose the advert banner to an ever expanding number of players. 
 We can track footfall impact on the advertisers website to see if the process is working.
 
-### Design mockups
+### Design mockup
 
 ![ScreenShot](assets/imgs/FirstMoq.png)
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+This guessing game has a resource feature, allowing you to use your points to buy clues.
+It implements the card names catalog of the scryfall API to allow the user to select names from a drop down
+while guessing. This is helpful as the names selected will match the names in the random cards API, reducing any string comparison mistakes.
 
 ### Features Left to Implement
-- Another feature idea
+- I would like to add a revealer, that shows the image of the magic card when the user guesses. If they guessed correctly, the card will shrink towards their score 
+as it lights up green. If incorrectly, it will shrink towards their lives as it lights up red.
+
+- I would also like to add a ranking table into the localStorage, allowing users to submit their User names and keeping a display of the top 5 players of all time.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+The strucure and design of this website was built using: 
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- HTML
+- CSS
+- SASS
+- Bootstrap
 
+DOM Manipulation was handled by: 
+
+- JavaScript
+- JQuery
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+I carried out Jasmine testing late into the build process. This was an oversite as from what I've learned (especially from Dylan Israel's youtube channel), it is much easier
+to develop your tests and codes simultainiously.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+My main testing was carried out by sharing my github pages deployment with a magic based facebook group and with the developer team at scryfall.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+The main issue addressed, was that the autocomplete function was not working when the page was loaded for the first time.
+To fix this I removed the list from localStorage and added it to a stored variable, then introduced it as a call back.
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+Other corrected issues were incorrect button functions and addressing some design issue. 
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The majority of my testing conversations can be seen in the imgs/Testing/Screenshot... path.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This page has been deloyed on github pages, and deloyed throughout discord and facebook.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
+The link can be found here: https://jpmurdie.github.io/Milestone-Project-2-Guess-the-Card/
 
 ## Credits
+Thanks to the following for your help on this project:
+
+Dylan Israel's Youtube channel
+Scryfall Discord channel
+CI Slack
+My mentor Reuben F
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+The conent for this page is all generated my the Scryfall MtG API.
 
 ### Media
-- The photos used in this site were obtained from ...
+The add banner on the website was taken from starcitygames.com, it covers a link to their page.
 
 ### Acknowledgements
-
-- I received inspiration for this project from X
+- I received inspiration for this project from magic tournament coverage, sometimes the commentators like to challenge each other
+on their knowledge and test their ability on knowing the flavour text of magic cards.

@@ -122,6 +122,20 @@ button:focus {
   border: 2px solid #a5f2f3;
 }
 
+#endGameModal {
+  background-color: black;
+  Position: absolute;
+  display: block;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border: 2px solid #a5f2f3;
+}
+
 .canvasButton {
   background-color: black;
   color: white;

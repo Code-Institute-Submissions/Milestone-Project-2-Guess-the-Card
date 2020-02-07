@@ -1,21 +1,22 @@
-describe("AutoComplete Function", function () {
+describe("fetchCardList Function", function () {
     describe("Launch Test", function () {
 
         //arrange 
-        beforeEach(function () {
-            spyOn(window, 'getCatData');
+        beforeAll(function () {
+            spyOn(window,'fetchCardList');
         });
 
         //act
-        getCatData(autocomplete);
+        fetchCardList(autocomplete);
 
 
         //arrange
-        it("Should be called", function () {
-            expect(window.getCatData).toHaveBeenCalled();
+        fit("Should be called", function () {
+            expect(window.fetchCardList).toHaveBeenCalled();
         });
     });
 });
+//Unable to get the above to work in time before submitting. Will need to be addressed.
 
 describe("Math Functions", () => {
     it("Gets the Sum of 2 Numbers", () => {
