@@ -37,8 +37,7 @@ We can track footfall impact on the advertisers website to see if the process is
 
 ### Design mockups
 
-![alt text](https://github.com/JPMurdie/Milestone-Project-2-Guess-the-Card/blob/895a62b8c72a795dc201ff524152b1d1da05e7a6/assets/imgs/FirstMoq.png "Logo Title Text 1")
-
+![ScreenShot](assets/imgs/FirstMoq.png)
 
 ## Features
 
