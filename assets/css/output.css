@@ -1,4 +1,4 @@
-/*npm install -g sass  sass assets/sass/input.scss assets/css/output.css*/
+/*npm install -g sass  sass --watch assets/sass/input.scss assets/css/output.css*/
 /*----------------------------------------SASS Variables*/
 /*----------------------------------------Element Styles*/
 html {
@@ -96,7 +96,6 @@ button:focus {
   background-color: rgba(135, 206, 250, 0.8);
   z-index: 3;
   border-radius: 5px;
-  display: none;
 }
 
 #endGameCanvas {
@@ -615,6 +614,7 @@ input[type=submit] {
 .autocomplete-items div:hover {
   /*when hovering an item:*/
   background-color: #e9e9e9;
+  color: black;
 }
 
 .autocomplete-active {

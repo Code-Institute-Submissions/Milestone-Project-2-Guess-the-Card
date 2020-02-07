@@ -59,11 +59,8 @@
 										</div>
 									</div>
 									<div class="row m-3 p-1">
-										<div class="col-6 text-center">
+										<div class="col-12 text-center">
 											<button id="newGameYes" class="startButton canvasButton">Yes</button>
-										</div>
-										<div class="col-6 text-center">
-											<button class="canvasButton">No</button>
 										</div>
 									</div>
 								</div>
@@ -72,7 +69,7 @@
 									<div class="row">
 										<div class="col-12 text-center canvasQuestion">
 											<h6>Rules!</h6>
-											<ul p-0>
+											<ul p-0="">
 												<li>Guess the name of the Theros: Beyond Death Magic card from flavour
 													text only!</li>
 												<li>Guess incorrectly and lose a life! You've only got 3!</li>
@@ -81,6 +78,14 @@
 												<li>How high can you score?</li>
 												<li>Challenge your friends!</li>
 											</ul>
+										</div>
+									</div>
+								</div>
+                                <hr id="ruleBreak">
+								<div class="container">
+									<div class="row m-3 p-1">
+										<div class="col-12 text-center">
+											<button id="leaderBoard" class="startButton canvasButton">View Leader Board</button>
 										</div>
 									</div>
 								</div>
@@ -116,11 +121,6 @@
 						</div>
 					</div>
 					<div class="row my-2">
-						<div class="col-12">
-							<div class="container text-center">
-								<button id="newGameButton" class="gameButton" type="button">New Game</button>
-							</div>
-						</div>
 					</div>
 					<div class="row my-2 scoreRow">
 						<div class="offset-2 col-4 scoreCol scoreColLeft text-center gameButton">
@@ -171,15 +171,15 @@
 							<div class="col-12 p-0">
 								<div class="container p-0 clueContTitle">
 									<div class="clueTitle stickyButton">
-                                        <p id="clueTitle" class="m-0">Click the buttons to reveal the clues!</p>
-                                    </div>
+										<p id="clueTitle" class="m-0">Click the buttons to reveal the clues!</p>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row my-2 clueRow">
 							<div class="col-12">
 								<div class="container clueCont">
-									<p id="clue1" class="clueTextBox"></p>
+									<p id="clue1" class="clueTextBox">" "</p>
 									<button id="cButton1" class="clueButton stickyButton" disabled>Reveal Card Colour</button>
 								</div>
 							</div>
